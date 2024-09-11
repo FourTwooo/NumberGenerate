@@ -1,6 +1,6 @@
 # NumberGenerate
 
-**NumberGenerate** 生成虚假信息(姓名,身份证,手机号)
+**NumberGenerate** 虚拟信息生成器.
 
 
 IDCardGenerate
@@ -47,6 +47,8 @@ IDCardGenerate
 '''
 
 import Generate
+
+
 Phone = Generate.PhoneGenerate()
 result = Phone.get_phone(
     city_name="永州",
@@ -74,6 +76,9 @@ NameGenerate
 :return:        [name...]
 '''
 
+import Generate
+
+
 result = Generate.NameGenerate().get_names(['ou', '阳', 'na', '*'])
 result = ['殴阳捺蘸', '殴阳捺镶', '殴阳捺瓤', '殴阳捺矗', ...]
 ```
@@ -87,6 +92,8 @@ SaveFile
 :param numbers:         [数据...]
 :param output_file:     储存路径
 '''
+import Generate
+
 
 saveFile = Generate.SaveFile()
 saveFile.generate_vcf(['13812344321', '13812344322', ...])
