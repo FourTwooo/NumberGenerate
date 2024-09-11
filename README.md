@@ -33,7 +33,7 @@ result = ['445201200007230328', '445201200007231128', '445201200007233828', '445
 # 更改自定义查询接口
 '''
 :param address:         地区 -> "省|市|区"
-:return: [地区代码...]
+:return: [区域代码...]
 '''
 IDCard.api_function = lambda address: ["320505"]
 
@@ -94,7 +94,7 @@ Name = Generate.NameGenerate(
 
 # 添加汉字
 """
-:param words:   传入的汉字列表. 如果generate_chinese_word生成的汉字并没有包含你需要的, 那么你可以自行添加
+:param words:   传入的汉字列表. 如果generate_chinese_word生成的汉字并没有包含你需要的
 """
 Name.add_words(["汉", "字"])
 
