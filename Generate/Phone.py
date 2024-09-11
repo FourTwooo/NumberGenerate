@@ -60,7 +60,7 @@ class PhoneGenerate:
             incomplete_phone=incomplete_phone
         )
         # print(f'使用api:{self.mode} 查询号段[{len(Mobile_phone_number_range_phones)}]:{Mobile_phone_number_range_phones}')
-        start_time = time.time()
+        # start_time = time.time()
         max_workers = len(Mobile_phone_number_range_phones)
         if max_workers == 0:
             raise Generate.errors.NumberValueError(f"{city_name} {incomplete_phone} 未查询到符合号段")
@@ -73,7 +73,7 @@ class PhoneGenerate:
                 )
                 task.add_done_callback(self.get_data)
 
-        end_time = time.time()
+        # end_time = time.time()
         # print(f'生成手机数量{len(self.complete_phone_list)} 耗时:{end_time - start_time}')
         return self.complete_phone_list
 

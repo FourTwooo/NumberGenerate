@@ -20,14 +20,6 @@ if __name__ == '__main__':
     )
     print(len(phones), phones)
 
-    Phone = Generate.PhoneGenerate()
-    Phone.api_function = lambda incomplete_phone, city_name: ["1588854"]
-    phones = Phone.get_phone(
-        city_name="宁波",
-        incomplete_phone="158******38"
-    )
-    print(len(phones), phones)
-
     Name = Generate.NameGenerate()
     names = Name.get_names(['ou', '阳', 'na', '*'])
     print(len(names), names)
@@ -35,4 +27,4 @@ if __name__ == '__main__':
     saveFile = Generate.SaveFile()
 
     saveFile.generate_vcf(phones)
-    saveFile.generate_txt(phones)
+    saveFile.generate_txt(date_data)

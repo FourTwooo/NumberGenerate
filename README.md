@@ -1,12 +1,17 @@
-# NumberGenerate
+## NumberGenerate
 
 **NumberGenerate** 虚拟信息生成器.
 
+***
 
-IDCardGenerate
-
-区域代码使用本地数据[db/city_db_data.csv]
+>IDCardGenerate
+>>区域代码使用本地数据 **[db/city_db_data.csv]**
 ```python
+
+import Generate
+
+IDCard = Generate.IDCardGenerate()
+# 生成器
 '''
 :param id_card:         模糊身份证号
 :param address:         地区 -> "省|市|区"
@@ -15,9 +20,6 @@ IDCardGenerate
 :param zodiac:          生肖
 :return: [id_card...]
 '''
-
-import Generate
-IDCard = Generate.IDCardGenerate()
 result = IDCard.get_id_card(
     id_card="44****2000******28",
     address="广东|揭阳|",
@@ -28,36 +30,39 @@ result = IDCard.get_id_card(
 
 result = ['445201200007230328', '445201200007231128', '445201200007233828', '445201200007234628', ...]
 
-# 更改查询接口
+# 更改自定义查询接口
 '''
 :param address:         地区 -> "省|市|区"
 :return: [地区代码...]
 '''
 IDCard.api_function = lambda address: ["320505"]
+
+# 起始年份设定
+IDCard.START_YEAR = 1900
+# 终止年份设定
+IDCard.END_YEAR = 2000
 ```
 
-IDCardGenerate
-
-号段使用第三方平台[[查号吧](https://www.chahaoba.com), [手机号段网](https://telphone.cn)]
+>PhoneGenerate
+>>号段使用第三方平台 **[[查号吧](https://www.chahaoba.com), [手机号段网](https://telphone.cn)]**
 ```python
+import Generate
+
+Phone = Generate.PhoneGenerate()
+
+# 生成器
 '''
 :param city_name:               市
 :param incomplete_phone:        模糊手机号
 :return:                        [phone...]
 '''
-
-import Generate
-
-
-Phone = Generate.PhoneGenerate()
 result = Phone.get_phone(
     city_name="永州",
     incomplete_phone="182***6**03"
 )
 result = [18229450003, 18229450103, 18229450203, 18229450303, 18229450403, ...]
 
-
-# 更改查询接口
+# 更改自定义查询接口
 '''
 :param city_name:               市
 :param incomplete_phone:        模糊手机号
@@ -67,26 +72,49 @@ Phone.api_function = lambda incomplete_phone, city_name: ["1588854"]
 
 ```
 
-NameGenerate
-
-
+>NameGenerate
+>>生成姓名,支持未知,拼音,缩写,中文多种传参方式
 ```python
-'''
-:param name:    [["张"], ["*"]]
-:return:        [name...]
-'''
-
 import Generate
 
+# 文字库选择
+'''
+:param rare_word:               生僻字
+:param common_words:            常用字
+:param secondary_common_words:  次要常用字
+:param all_words:               所有汉字
+'''
 
-result = Generate.NameGenerate().get_names(['ou', '阳', 'na', '*'])
+Name = Generate.NameGenerate(
+    rare_word=False,
+    common_words=True,
+    secondary_common_words=True,
+    all_words=False
+)
+
+# 添加汉字
+"""
+:param words:   传入的汉字列表. 如果generate_chinese_word生成的汉字并没有包含你需要的, 那么你可以自行添加
+"""
+Name.add_words(["汉", "字"])
+
+'''
+:param name:    [["用"], ["*"], ["ce"], ["s"]]
+:return:        [name...]
+'''
+result = Name.get_names(['ou', '阳', 'na', '*'])
+
 result = ['殴阳捺蘸', '殴阳捺镶', '殴阳捺瓤', '殴阳捺矗', ...]
+
+
+
+
+
 ```
 
 
-SaveFile
-
-数据储存
+>SaveFile
+>>数据储存
 ```python
 '''
 :param numbers:         [数据...]
