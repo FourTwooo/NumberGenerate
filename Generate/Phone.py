@@ -45,8 +45,38 @@ class PhoneGenerate:
                 Mobile_phone_number_range_phones.append(Mobile_phone_number)
         return Mobile_phone_number_range_phones
 
-    def get_data(self, data):
-        self.complete_phone_list += data.result()
+    # def get_phone(self, city_name, incomplete_phone):
+    #     """
+    #     :param city_name:               市
+    #     :param incomplete_phone:        手机号
+    #     :return:                        [phone...]
+    #     """
+    #
+    #     def get_data(data):
+    #         self.complete_phone_list += data.result()
+    #
+    #     self.complete_phone_list = []
+    #     Mobile_phone_number_range_phones = self.generate_phone_area(
+    #         city_name=city_name,
+    #         incomplete_phone=incomplete_phone
+    #     )
+    #     # print(f'使用api:{self.mode} 查询号段[{len(Mobile_phone_number_range_phones)}]:{Mobile_phone_number_range_phones}')
+    #     start_time = time.time()
+    #     max_workers = len(Mobile_phone_number_range_phones)
+    #     if max_workers == 0:
+    #         raise Generate.errors.NumberValueError(f"{city_name} {incomplete_phone} 未查询到符合号段")
+    #     with ThreadPoolExecutor(max_workers=max_workers) as pool:
+    #         for hd in Mobile_phone_number_range_phones:
+    #             task = pool.submit(
+    #                 self.generate_complete_phones,
+    #                 Mobile_phone_number_range=hd,
+    #                 incomplete_phone=incomplete_phone
+    #             )
+    #             task.add_done_callback(self.get_data)
+    #
+    #     end_time = time.time()
+    #     print(f'生成手机数量{len(self.complete_phone_list)} 耗时:{end_time - start_time}')
+    #     return self.complete_phone_list
 
     def get_phone(self, city_name, incomplete_phone):
         """
@@ -54,28 +84,29 @@ class PhoneGenerate:
         :param incomplete_phone:        手机号
         :return:                        [phone...]
         """
-        self.complete_phone_list = []
         Mobile_phone_number_range_phones = self.generate_phone_area(
             city_name=city_name,
             incomplete_phone=incomplete_phone
         )
-        # print(f'使用api:{self.mode} 查询号段[{len(Mobile_phone_number_range_phones)}]:{Mobile_phone_number_range_phones}')
-        # start_time = time.time()
-        max_workers = len(Mobile_phone_number_range_phones)
-        if max_workers == 0:
+
+        def map_start(arg):
+            return self.generate_complete_phones(arg[0], arg[1])
+
+        if not Mobile_phone_number_range_phones:
             raise Generate.errors.NumberValueError(f"{city_name} {incomplete_phone} 未查询到符合号段")
-        with ThreadPoolExecutor(max_workers=max_workers) as pool:
-            for hd in Mobile_phone_number_range_phones:
-                task = pool.submit(
-                    self.generate_complete_phones,
-                    Mobile_phone_number_range=hd,
-                    incomplete_phone=incomplete_phone
-                )
-                task.add_done_callback(self.get_data)
+        tasks = [(p, incomplete_phone)for p in Mobile_phone_number_range_phones]
+
+        # start_time = time.time()
+        with ThreadPoolExecutor(max_workers=len(Mobile_phone_number_range_phones)) as pool:
+            results = pool.map(map_start, tasks)
+
+        complete_phone_list = []
+        for i in results:
+            complete_phone_list += i
 
         # end_time = time.time()
         # print(f'生成手机数量{len(self.complete_phone_list)} 耗时:{end_time - start_time}')
-        return self.complete_phone_list
+        return complete_phone_list
 
 
 if __name__ == '__main__':
