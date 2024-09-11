@@ -1,15 +1,15 @@
 import time
 from concurrent.futures import ThreadPoolExecutor
 
-import api
 import Generate.errors
-
-generate_phone_area = api.get_phone_api.tel_phone
+from Generate import api
 
 
 class PhoneGenerate:
 
     def __init__(self):
+        self.api_function = Generate.api.get_phone_api.tel_phone
+
         self.complete_phone_list = []
 
     @staticmethod
@@ -33,9 +33,8 @@ class PhoneGenerate:
 
         return complete_phones
 
-    @staticmethod
-    def generate_phone_area(incomplete_phone, city_name):
-        Mobile_phone_number_range_list = generate_phone_area(incomplete_phone, city_name)
+    def generate_phone_area(self, incomplete_phone, city_name):
+        Mobile_phone_number_range_list = self.api_function(incomplete_phone, city_name)
 
         # 检测是否为正常号段
         Mobile_phone_number_range_phones = []

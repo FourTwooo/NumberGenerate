@@ -1,4 +1,5 @@
 import os
+
 import pandas as pd
 
 current_dir_path = os.path.dirname(os.path.abspath(__file__))
@@ -32,7 +33,7 @@ def get_area_codes(address: str):
 
 
 if __name__ == '__main__':
-    # print(get_area_codes(
-    #     address='福建|三明|'
-    # ))
-    print(CommonlyUsedSurname)
+    print(get_area_codes(
+        address='福建|三明|'
+    ))
+    # print(CommonlyUsedSurname)

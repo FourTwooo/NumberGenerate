@@ -1,5 +1,6 @@
-import requests
 import re
+
+import requests
 from lxml import etree
 
 
@@ -36,3 +37,7 @@ def tel_phone(incomplete_phone, city_name):
             Mobile_phone_number_range_list.append(Mobile_phone_number)
     # print(Mobile_phone_number_range_list)
     return Mobile_phone_number_range_list
+
+
+if __name__ == '__main__':
+    print(tel_phone('138********', '淮安'))

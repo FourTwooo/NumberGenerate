@@ -1,10 +1,8 @@
 from datetime import timedelta, datetime
 
 import Generate.errors
-from db import get_area_codes
+from Generate.db import get_area_codes
 
-
-get_area_codes = get_area_codes
 
 # def get_area_codes(address) -> list:
 #     return ['320601', '320602']
@@ -13,6 +11,9 @@ get_area_codes = get_area_codes
 class IDCardGenerate:
 
     def __init__(self):
+
+        self.api_function = get_area_codes
+
         # 起始年份设定
         self.START_YEAR = 1900
         # 终止年份设定
@@ -146,12 +147,11 @@ class IDCardGenerate:
 
         return check_code
 
-    @staticmethod
-    def generator_area_code(area_code, address) -> list:
+    def generator_area_code(self, area_code, address) -> list:
         if "*" not in area_code:
             return [area_code]
 
-        city_area_codes = get_area_codes(address)
+        city_area_codes = self.api_function(address)
 
         success_city_area_codes = []
         for city_area_code in city_area_codes:

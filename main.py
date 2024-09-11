@@ -2,19 +2,29 @@ import Generate
 
 if __name__ == '__main__':
     IDCard = Generate.IDCardGenerate()
+    # IDCard.api_function = lambda address: ["320505"]
     date_data = IDCard.get_id_card(
-        id_card="44****2000******28",
-        address="广东|揭阳|",
-        # gender="女",
+        id_card="320***200205071516",
+        # address="广东|揭阳|",
+        gender="男",
         # constellation="狮子座",
         # zodiac="龙"
     )
     print(len(date_data), str(date_data)[:200])
-    #
+
     Phone = Generate.PhoneGenerate()
+
     phones = Phone.get_phone(
-        city_name="永州",
-        incomplete_phone="182***6**03"
+        city_name="毕节",
+        incomplete_phone="150******34"
+    )
+    print(len(phones), phones)
+
+    Phone = Generate.PhoneGenerate()
+    Phone.api_function = lambda incomplete_phone, city_name: ["1588854"]
+    phones = Phone.get_phone(
+        city_name="宁波",
+        incomplete_phone="158******38"
     )
     print(len(phones), phones)
 
