@@ -70,6 +70,12 @@ result = [18229450003, 18229450103, 18229450203, 18229450303, 18229450403, ...]
 '''
 Phone.api_function = lambda incomplete_phone, city_name: ["1588854"]
 
+from Generate import api
+# 更换 查号吧
+Phone.api_function = api.cha_hao_ba
+# 更换 手机号段网 [默认就是手机号段网]
+Phone.api_function = api.tel_phone
+
 ```
 
 >NameGenerate
