@@ -1,4 +1,5 @@
 import time
+from itertools import product
 from concurrent.futures import ThreadPoolExecutor
 
 import Generate.errors
@@ -10,31 +11,50 @@ class PhoneGenerate:
     def __init__(self):
         self.api_function = Generate.api.get_phone_api.tel_phone
 
-        self.complete_phone_list = []
-
     @staticmethod
     def generate_complete_phones(Mobile_phone_number_range, incomplete_phone):
-        complete_phones = []
-        new_phone = incomplete_phone[7:11]
-        phone_one = Mobile_phone_number_range + new_phone
+        def generate(phone_arr, start, __phones):
+            try:
+                i = start + phone_arr[start:].index('*')
+                for digit in range(10):
+                    new_arr = phone_arr.copy()
+                    new_arr[i] = str(digit)
+                    generate(new_arr, i + 1, __phones)
+            except ValueError:
+                # no more '*'
+                __phones.append(''.join(phone_arr))
 
-        js_count = sum(1 for digit in phone_one if digit != '*')
+        phones = []
+        generate(list(Mobile_phone_number_range + incomplete_phone[7:11]), 0, phones)
 
-        start = phone_one.replace('*', '0')
-        end = phone_one.replace('*', '9')
+        return [int(phone) for phone in phones]
 
-        phone_range = range(int(start), int(end) + 1)
-        for phone_demo in phone_range:
-            list_phone = list(phone_one)
-            pd_js = sum(1 for i in range(len(list_phone)) if list_phone[i] == str(phone_demo)[i])
+    # @staticmethod
+    # def generate_complete_phones(Mobile_phone_number_range, incomplete_phone):
+    #     complete_phones = []
+    #     new_phone = incomplete_phone[7:11]
+    #     phone_one = Mobile_phone_number_range + new_phone
+    #
+    #     js_count = sum(1 for digit in phone_one if digit != '*')
+    #
+    #     start = phone_one.replace('*', '0')
+    #     end = phone_one.replace('*', '9')
+    #
+    #     phone_range = range(int(start), int(end) + 1)
+    #     for phone_demo in phone_range:
+    #         list_phone = list(phone_one)
+    #         pd_js = sum(1 for i in range(len(list_phone)) if list_phone[i] == str(phone_demo)[i])
+    #
+    #         if pd_js == js_count:
+    #             complete_phones.append(phone_demo)
+    #
+    #     return complete_phones
 
-            if pd_js == js_count:
-                complete_phones.append(phone_demo)
-
-        return complete_phones
-
-    def generate_phone_area(self, incomplete_phone, city_name):
-        Mobile_phone_number_range_list = self.api_function(incomplete_phone, city_name)
+    def generate_phone_area(self, incomplete_phone, city_name=None):
+        if city_name:
+            Mobile_phone_number_range_list = self.api_function(incomplete_phone, city_name)
+        else:
+            Mobile_phone_number_range_list = [str(_) for _ in range(1300000, 1999999)]
 
         # 检测是否为正常号段
         Mobile_phone_number_range_phones = []
@@ -78,10 +98,10 @@ class PhoneGenerate:
     #     print(f'生成手机数量{len(self.complete_phone_list)} 耗时:{end_time - start_time}')
     #     return self.complete_phone_list
 
-    def get_phone(self, city_name, incomplete_phone):
+    def get_phone(self, incomplete_phone, city_name=None):
         """
-        :param city_name:               市
         :param incomplete_phone:        手机号
+        :param city_name:               市
         :return:                        [phone...]
         """
         Mobile_phone_number_range_phones = self.generate_phone_area(
@@ -90,28 +110,31 @@ class PhoneGenerate:
         )
 
         def map_start(arg):
+            # print(arg)
             return self.generate_complete_phones(arg[0], arg[1])
 
         if not Mobile_phone_number_range_phones:
             raise Generate.errors.NumberValueError(f"{city_name} {incomplete_phone} 未查询到符合号段")
-        tasks = [(p, incomplete_phone)for p in Mobile_phone_number_range_phones]
+        tasks = [(p, incomplete_phone) for p in Mobile_phone_number_range_phones]
 
-        # start_time = time.time()
-        with ThreadPoolExecutor(max_workers=len(Mobile_phone_number_range_phones)) as pool:
+        start_time = time.time()
+        max_workers = 100 if len(Mobile_phone_number_range_phones) >= 100 else len(Mobile_phone_number_range_phones)
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
             results = pool.map(map_start, tasks)
 
         complete_phone_list = []
         for i in results:
             complete_phone_list += i
 
-        # end_time = time.time()
-        # print(f'生成手机数量{len(self.complete_phone_list)} 耗时:{end_time - start_time}')
+        end_time = time.time()
+        print(f'生成手机数量{len(complete_phone_list)} 耗时:{end_time - start_time}')
         return complete_phone_list
 
 
 if __name__ == '__main__':
     phone_bull = PhoneGenerate()
-    phone_numbers = phone_bull.get_phone(city_name="南通", incomplete_phone="177******90")
-    print(len(phone_numbers), phone_numbers)
+    print(phone_bull.generate_complete_phones(Mobile_phone_number_range='1504447', incomplete_phone='150*****3*4'))
+    # phone_numbers = phone_bull.get_phone(city_name="南通", incomplete_phone="177******90")
+    # print(len(phone_numbers), phone_numbers)
 
 
