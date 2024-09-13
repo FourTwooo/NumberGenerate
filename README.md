@@ -1,6 +1,6 @@
 ## NumberGenerate
 
-**NumberGenerate** 虚拟信息生成器.
+**NumberGenerate** 虚拟信息生成器，提供身份证号码、电话号码、姓名等数据的生成和保存功能。支持多种自定义参数设置，以适应不同的使用场景。
 
 ***
 
