@@ -9,13 +9,26 @@
 所有内容仅限用于学习和研究目的。不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负，通过使用项目代码随之而来的风险与本人无关。
 ***
 > IDCardGenerate
->> 区域代码使用本地数据 **[db/city_db_data.csv]**
+>> 区域代码使用本地数据 **\[db/city_db_data.csv\]**
 
 ```python
 
 import Generate
 
 IDCard = Generate.IDCardGenerate()
+
+# 更改自定义查询接口
+'''
+[可选]:param address:         地区 -> "省|市|区"
+:return: [区域代码...]
+'''
+IDCard.api_function = lambda address: ["320505"]
+
+# 起始年份设定
+IDCard.START_YEAR = 1900
+# 终止年份设定
+IDCard.END_YEAR = 2000
+
 # 生成器
 '''
 [必选]:param id_card:         模糊身份证号
@@ -34,18 +47,6 @@ result = IDCard.get_id_card(
 )
 
 result = ['445201200007230328', '445201200007231128', '445201200007233828', '445201200007234628', ...]
-
-# 更改自定义查询接口
-'''
-[可选]:param address:         地区 -> "省|市|区"
-:return: [区域代码...]
-'''
-IDCard.api_function = lambda address: ["320505"]
-
-# 起始年份设定
-IDCard.START_YEAR = 1900
-# 终止年份设定
-IDCard.END_YEAR = 2000
 ```
 
 > PhoneGenerate
@@ -55,18 +56,6 @@ IDCard.END_YEAR = 2000
 import Generate
 
 Phone = Generate.PhoneGenerate()
-
-# 生成器
-'''
-[必选]:param incomplete_phone:        模糊手机号
-[可选]:param city_name:               市
-:return:                        [phone...]
-'''
-result = Phone.get_phone(
-    city_name="永州",
-    incomplete_phone="182***6**03"
-)
-result = [18229450003, 18229450103, 18229450203, 18229450303, 18229450403, ...]
 
 # 更改自定义查询接口
 '''
@@ -83,6 +72,17 @@ Phone.api_function = api.cha_hao_ba
 # 更换 手机号段网 [默认就是手机号段网]
 Phone.api_function = api.tel_phone
 
+# 生成器
+'''
+[必选]:param incomplete_phone:        模糊手机号
+[可选]:param city_name:               市
+:return:                        [phone...]
+'''
+result = Phone.get_phone(
+    city_name="永州",
+    incomplete_phone="182***6**03"
+)
+result = [18229450003, 18229450103, 18229450203, 18229450303, 18229450403, ...]
 ```
 
 > NameGenerate
@@ -119,11 +119,6 @@ Name.add_words(["汉", "字"])
 result = Name.get_names(['ou', '阳', 'na', '*'])
 
 result = ['殴阳捺蘸', '殴阳捺镶', '殴阳捺瓤', '殴阳捺矗', ...]
-
-
-
-
-
 ```
 
 > SaveFile
@@ -141,4 +136,4 @@ saveFile.generate_vcf(['13812344321', '13812344322', ...])
 saveFile.generate_txt(['data1', 'data2'])
 ```
 
-<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=6JWWosRVV0rtISqQKNVU5QY8KT0sBQP8&jump_from=webapi&authKey=kvD0trmJvJiWSeFVv1+WTUYBpalYGKh+dF3zgfpLDuByEmZF2wT8XXwC8QuT/tzQ"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="逆向交流学习" title="逆向交流学习"></a>
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=6JWWosRVV0rtISqQKNVU5QY8KT0sBQP8&jump_from=webapi&authKey=kvD0trmJvJiWSeFVv1+WTUYBpalYGKh+dF3zgfpLDuByEmZF2wT8XXwC8QuT/tzQ"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="逆向交流学习" title="逆向交流学习"></a>
