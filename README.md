@@ -4,7 +4,7 @@
 ***
 ## 免责声明
 
-代码生成数据均为虚假并单一数据.本人仅用于网站虚假用户注册测试为此开发.
+代码生成数据均为虚假并单一数据.本人仅用个人网站虚假用户填写测试为此开发.
 
 所有内容仅限用于学习和研究目的。不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负，通过使用项目代码随之而来的风险与本人无关。
 ***
@@ -140,3 +140,5 @@ saveFile = Generate.SaveFile()
 saveFile.generate_vcf(['13812344321', '13812344322', ...])
 saveFile.generate_txt(['data1', 'data2'])
 ```
+
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=6JWWosRVV0rtISqQKNVU5QY8KT0sBQP8&jump_from=webapi&authKey=kvD0trmJvJiWSeFVv1+WTUYBpalYGKh+dF3zgfpLDuByEmZF2wT8XXwC8QuT/tzQ"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="逆向交流学习" title="逆向交流学习"></a>
