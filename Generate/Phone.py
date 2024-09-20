@@ -109,6 +109,8 @@ class PhoneGenerate:
         :param city_name:               市
         :return:                        [phone...]
         """
+        # import time
+        # start_time = time.time()
         phoneRange = self.generate_phone_area(
             city_name=city_name,
             incomplete_phone=incomplete_phone
@@ -122,8 +124,6 @@ class PhoneGenerate:
             raise Generate.errors.NumberValueError(f"{city_name} {incomplete_phone} 未查询到符合号段")
         tasks = [(p, incomplete_phone) for p in phoneRange]
 
-        # import time
-        # start_time = time.time()
         max_workers = 100 if len(phoneRange) >= 100 else len(phoneRange)
         with ThreadPoolExecutor(max_workers=max_workers) as pool:
             results = pool.map(map_start, tasks)

@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="pandas替代为sqlite3,">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator-enh.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Generate/db/csv_db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Generate/db/dat_csv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/NumberGenerate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NumberGenerate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/IDCard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/IDCard.py" afterDir="false" />
+    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="删除测试文件">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Generate/Phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/Phone.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/db/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/db/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/db/city_db_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/db/area_code.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/db/city_db_data.db" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/db/area_code.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -228,7 +215,7 @@
       <workItem from="1726715860138" duration="977000" />
       <workItem from="1726717487885" duration="63000" />
       <workItem from="1726723355130" duration="5421000" />
-      <workItem from="1726731696494" duration="16636000" />
+      <workItem from="1726731696494" duration="17556000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1725439067379</created>
@@ -328,7 +315,28 @@
       <option name="project" value="LOCAL" />
       <updated>1726715384028</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="pandas替代为sqlite3,">
+      <created>1726800605133</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1726800605133</updated>
+    </task>
+    <task id="LOCAL-00016" summary="本地数据库添加手机号归属地">
+      <created>1726800693504</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1726800693504</updated>
+    </task>
+    <task id="LOCAL-00017" summary="删除测试文件">
+      <created>1726800804053</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1726800804053</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +361,9 @@
     <MESSAGE value="更新文档, 手机生成算法优化" />
     <MESSAGE value="更新文档" />
     <MESSAGE value="pandas替代为sqlite3," />
-    <option name="LAST_COMMIT_MESSAGE" value="pandas替代为sqlite3," />
+    <MESSAGE value="本地数据库添加手机号归属地" />
+    <MESSAGE value="删除测试文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除测试文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -369,7 +379,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NumberGenerate$csv_db.coverage" NAME="csv_db 覆盖结果" MODIFIED="1726740765957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/db" />
     <SUITE FILE_PATH="coverage/NumberGenerate$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1725600720820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$main.coverage" NAME="main 覆盖结果" MODIFIED="1726798490391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$main.coverage" NAME="main 覆盖结果" MODIFIED="1726801073558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NumberGenerate$demo.coverage" NAME="demo 覆盖结果" MODIFIED="1726738236390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NumberGenerate$Phone.coverage" NAME="Phone 覆盖结果" MODIFIED="1726796832117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
     <SUITE FILE_PATH="coverage/NumberGenerate$get_phone_api.coverage" NAME="get_phone_api 覆盖结果" MODIFIED="1726023204313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api" />
