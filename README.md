@@ -34,10 +34,10 @@ IDCard = Generate.IDCardGenerate()
 # 返回值: [区域代码...]
 IDCard.db_function = lambda address: ["320505"]
 
-# 设定起始年份(可选)
+# 设定起始年份
 IDCard.START_YEAR = 1900
 
-# 设定终止年份(可选)
+# 设定终止年份
 IDCard.END_YEAR = 2000
 
 ```
