@@ -22,7 +22,7 @@ IDCard = Generate.IDCardGenerate()
 [可选]:param address:         地区 -> "省|市|区"
 :return: [区域代码...]
 '''
-IDCard.api_function = lambda address: ["320505"]
+IDCard.db_function = lambda address: ["320505"]
 
 # 起始年份设定
 IDCard.START_YEAR = 1900

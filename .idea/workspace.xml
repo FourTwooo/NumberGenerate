@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="删除测试文件">
+    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="更新文档">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/Phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/Phone.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -215,7 +214,7 @@
       <workItem from="1726715860138" duration="977000" />
       <workItem from="1726717487885" duration="63000" />
       <workItem from="1726723355130" duration="5421000" />
-      <workItem from="1726731696494" duration="17556000" />
+      <workItem from="1726731696494" duration="17761000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1725439067379</created>
@@ -336,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726800804053</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="更新文档">
+      <created>1726801489961</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1726801489961</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,11 +365,11 @@
     <MESSAGE value="更换map" />
     <MESSAGE value="更新文档api" />
     <MESSAGE value="更新文档, 手机生成算法优化" />
-    <MESSAGE value="更新文档" />
     <MESSAGE value="pandas替代为sqlite3," />
     <MESSAGE value="本地数据库添加手机号归属地" />
     <MESSAGE value="删除测试文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="删除测试文件" />
+    <MESSAGE value="更新文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新文档" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
