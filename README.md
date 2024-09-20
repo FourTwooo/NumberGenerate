@@ -114,7 +114,6 @@ result = ['20020321', '20020331', '20020401', '20020411']
 **示例代码**
 
 ```python
-```python
 import Generate
 
 Phone = Generate.PhoneGenerate()
