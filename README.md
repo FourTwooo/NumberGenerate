@@ -152,7 +152,7 @@ Name = Generate.NameGenerate(
 #### Generate.NameGenerate().add_words
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
 |:--------------|:-------|:----|:-----|:--------------|
-| words       | List | 无   | 是    | 传入的汉字列表. 如果generate_chinese_word生成的汉字并没有包含你需要的        |
+| words       | List | 无   | 是    | 传入的汉字列表. 如果内置的汉字并没有包含你需要的 |
 
 **示例代码**
 
