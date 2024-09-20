@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="更新文档">
+    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="更新手机号归属地数据库, 新增运营商号段生成">
       <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7477c098-194c-4451-8680-1eeaebb19fe8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7477c098-194c-4451-8680-1eeaebb19fe8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/Phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/Phone.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/api/get_phone_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/api/get_phone_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/db/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/db/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/db/area_code.db" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/db/area_code.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/db/csv_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/db/csv_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/db/phone_data.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +213,7 @@
       <workItem from="1726715860138" duration="977000" />
       <workItem from="1726717487885" duration="63000" />
       <workItem from="1726723355130" duration="5421000" />
-      <workItem from="1726731696494" duration="33478000" />
+      <workItem from="1726731696494" duration="33972000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1725439067379</created>
@@ -415,7 +404,21 @@
       <option name="project" value="LOCAL" />
       <updated>1726811134893</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="更新手机号归属地数据库, 新增运营商号段生成">
+      <created>1726821630613</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1726821630613</updated>
+    </task>
+    <task id="LOCAL-00029" summary="更新手机号归属地数据库, 新增运营商号段生成">
+      <created>1726821671298</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1726821671298</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +445,8 @@
     <MESSAGE value="本地数据库添加手机号归属地" />
     <MESSAGE value="删除测试文件" />
     <MESSAGE value="更新文档" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新文档" />
+    <MESSAGE value="更新手机号归属地数据库, 新增运营商号段生成" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新手机号归属地数据库, 新增运营商号段生成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
