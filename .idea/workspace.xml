@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="更新文档">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/IDCard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/IDCard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/Phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/Phone.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -216,7 +214,7 @@
       <workItem from="1726715860138" duration="977000" />
       <workItem from="1726717487885" duration="63000" />
       <workItem from="1726723355130" duration="5421000" />
-      <workItem from="1726731696494" duration="23529000" />
+      <workItem from="1726731696494" duration="24199000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1725439067379</created>
@@ -393,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726809270124</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="更新文档">
+      <created>1726810429861</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1726810429861</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -11,7 +11,7 @@
 ---
 ### Generate.IDCardGenerate
 
-使用的区域代码数据库： **\[db/area_code.db - city_data\]**
+使用的区域代码数据库： [db/area_code.db - city_data](./Generate/db/area_code.db)
 
 **类属性**
 
@@ -80,10 +80,10 @@ result = ['445201200007230328', '445201200007231128', '445201200007233828', '445
 **示例代码**
 ```python
 result = IDCard.generator_date(
-        "200****1",
-        constellation="白羊座",
-        zodiac="马"
-    )
+    "200****1",
+    constellation="白羊座",
+    zodiac="马"
+)
 
 # 调用方法后，返回结果
 result = ['20020321', '20020331', '20020401', '20020411']
@@ -91,7 +91,7 @@ result = ['20020321', '20020331', '20020401', '20020411']
 
 
 ### Generate.PhoneGenerate()
-本地数据库 **\[db/area_code.db - phone_data\]**
+使用的号段数据库 [db/area_code.db - phone_data](./Generate/db/area_code.db)
 
 号段在线查询使用第三方平台 **[[查号吧](https://www.chahaoba.com), [手机号段网](https://telphone.cn)]**
 
