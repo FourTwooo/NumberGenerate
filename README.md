@@ -51,6 +51,7 @@ result = ['445201200007230328', '445201200007231128', '445201200007233828', '445
 
 > PhoneGenerate
 >> 本地数据库 **\[db/area_code.db - phone_data\]**
+>>
 >> 号段在线查询使用第三方平台 **[[查号吧](https://www.chahaoba.com), [手机号段网](https://telphone.cn)]**
 
 ```python
