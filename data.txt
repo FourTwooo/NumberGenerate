@@ -1,3 +1,0 @@
-            this.g = (EditText) viewGroup.findViewById(R.id.qqId);
-            this.i = (EditText) viewGroup.findViewById(R.id.passWord);
-            this.m = (Button) viewGroup.findViewById(R.id.login_btn);
