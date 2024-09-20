@@ -18,7 +18,7 @@
 |:--------------|:-------  |:----|:--------------|
 | db_function   | Function | from Generate.db import get_area_codes   | 本地数据库查询函数        |
 | START_YEAR    | Int   | 1900   | 生成起始年份|
-| END_YEAR      | Int   | datetime.now().year + 1   | 性别，可选为"男"或"女" |
+| END_YEAR      | Int   | datetime.now().year + 1   | 生成终止年份 |
 | CONSTELLATIONS| String   | ...   | 星座表     |
 
 **示例代码**
