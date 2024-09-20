@@ -46,10 +46,10 @@ IDCard.END_YEAR = 2000
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
 |:--------------|:-------|:----|:-----|:--------------|
 | id_card       | String | 无   | 是    | 模糊身份证号        |
-| address       | String | None   | 否    | 地区，格式为 "省\|市\|区"     |
-| gender        | String | None   | 否    | 性别，可选为"男"或"女" |
-| constellation | String | None   | 否    | 星座，如"狮子座"     |
-| zodiac        | String | None   | 否    | 生肖，如"龙"       |
+| address       | String | "\|\|"   | 否    | 地区，格式为 "省\|市\|区"     |
+| gender        | String |  None  | 否    | 性别，可选为"男"或"女" |
+| constellation | String | "未知星座"   | 否    | 星座，如"狮子座"     |
+| zodiac        | String | "未知生肖"   | 否    | 生肖，如"龙"       |
 
 **示例代码**
 ```python
