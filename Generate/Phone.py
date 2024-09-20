@@ -139,8 +139,9 @@ class PhoneGenerate:
 
 if __name__ == '__main__':
     phone_bull = PhoneGenerate()
-    # print(phone_bull.generate_complete_phones(Mobile_phone_number_range='1504447', incomplete_phone='150*****3*4'))
-    phone_numbers = phone_bull.get_phone(city_name="南通", incomplete_phone="177******90")
+    phone_numbers = phone_bull.generate_phone_area(
+        city_name="永州",
+        incomplete_phone="182***6**03"
+    )
+    # phone_numbers = phone_bull.get_phone(city_name="南通", incomplete_phone="177******90")
     print(len(phone_numbers), phone_numbers[:20])
-
-

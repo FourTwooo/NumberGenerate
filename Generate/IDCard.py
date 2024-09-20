@@ -209,12 +209,16 @@ class IDCardGenerate:
 
 if __name__ == '__main__':
     IDCard = IDCardGenerate()
-    date_data = IDCard.get_id_card(
-        id_card="******20000821****",
-        address="广西|柳州|",
-        gender="女",
-        constellation="狮子座",
-        zodiac="龙"
+    # date_data = IDCard.get_id_card(
+    #     id_card="******20000821****",
+    #     address="广西|柳州|",
+    #     gender="女",
+    #     constellation="狮子座",
+    #     zodiac="龙"
+    # )
+    date_data = IDCard.generator_date(
+        "200****1",
+        constellation="白羊座",
+        zodiac="马"
     )
-    # date_data = IDCard.generator_date("200*****", constellation="白羊座")
     print(len(date_data), date_data)

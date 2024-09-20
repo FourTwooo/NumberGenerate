@@ -1,13 +1,14 @@
 ## NumberGenerate
 **NumberGenerate** 虚拟信息生成器，提供身份证号码、电话号码、姓名等数据的生成和保存功能。支持多种自定义参数设置，以适应不同的使用场景。
 
-***
+---
 ## 免责声明
 
 代码生成数据均为虚假并单一数据.本人仅用个人网站虚假用户填写测试为此开发.
 
 所有内容仅限用于学习和研究目的。不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负，通过使用项目代码随之而来的风险与本人无关。
-***
+
+---
 ### Generate.IDCardGenerate
 
 使用的区域代码数据库： **\[db/area_code.db - city_data\]**
@@ -43,6 +44,8 @@ IDCard.END_YEAR = 2000
 ```
 
 #### Generate.IDCardGenerate().get_id_card
+> 身份证号码生成
+
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
 |:--------------|:-------|:----|:-----|:--------------|
 | id_card       | String | 无   | 是    | 模糊身份证号        |
@@ -63,6 +66,27 @@ result = IDCard.get_id_card(
 
 # 调用方法后，返回结果
 result = ['445201200007230328', '445201200007231128', '445201200007233828', '445201200007234628', ...]
+```
+
+#### Generate.IDCardGenerate().generator_date
+> 年份日期生成
+
+| 属性            | 类型     | 默认值 | 是否必填 | 说明            |
+|:--------------|:-------|:----|:-----|:--------------|
+| date_str       | String | 无   | 是    | 模糊年份日期 - "****\[年\]**\[月\]**\[日\]"  |
+| constellation  | String | "未知星座"   | 否    | 星座     |
+| zodiac        | String |  "未知生肖"  | 否    | 生肖 |
+
+**示例代码**
+```python
+result = IDCard.generator_date(
+        "200****1",
+        constellation="白羊座",
+        zodiac="马"
+    )
+
+# 调用方法后，返回结果
+result = ['20020321', '20020331', '20020401', '20020411']
 ```
 
 
@@ -105,10 +129,15 @@ Phone.api_function = api.tel_phone
 ```
 
 #### Generate.PhoneGenerate().get_phone
+> 手机号码生成
+
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
 |:--------------|:-------|:----|:-----|:--------------|
 | incomplete_phone| String | 无   | 是    | 模糊手机号        |
 | city_name       | String | None   | 否    | 地区名，格式为 省或市名     |
+
+**示例代码**
+
 ```python
 result = Phone.get_phone(
     city_name="永州",
@@ -117,6 +146,26 @@ result = Phone.get_phone(
 # 调用方法后，返回结果
 result = [18229450003, 18229450103, 18229450203, 18229450303, 18229450403, ...]
 ```
+
+#### Generate.PhoneGenerate().generate_phone_area
+> 手机号段生成
+
+| 属性            | 类型     | 默认值 | 是否必填 | 说明            |
+|:--------------|:-------|:----|:-----|:--------------|
+| incomplete_phone| String | 无   | 是    | 模糊手机号        |
+| city_name       | String | None   | 否    | 地区名，格式为 省或市名     |
+
+**示例代码**
+
+```python
+result = Phone.generate_phone_area(
+    city_name="永州",
+    incomplete_phone="182***6**03"
+)
+# 调用方法后，返回结果
+result = ['1820746', '1822946', '1824476', '1827466']
+```
+
 
 ### Generate.NameGenerate()
 生成姓名,支持未知,拼音,缩写,中文多种传参方式
@@ -150,6 +199,8 @@ Name = Generate.NameGenerate(
 
 
 #### Generate.NameGenerate().add_words
+> 添加未知汉字
+
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
 |:--------------|:-------|:----|:-----|:--------------|
 | words       | List | 无   | 是    | 传入的汉字列表. 如果内置的汉字并没有包含你需要的 |
@@ -162,6 +213,8 @@ Name.add_words(["汉", "字"])
 
 
 #### Generate.NameGenerate().get_names
+> 姓名生成
+
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
 |:--------------|:-------|:----|:-----|:--------------|
 | name       | List | 无   | 是    | 姓名列表|
@@ -196,6 +249,8 @@ saveFile.current_dir_path = 'C:/'
 ```
 
 #### Generate.NameGenerate().generate_vcf
+> vcf文件生成
+
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
 |:--------------|:-------|:----|:-----|:--------------|
 | numbers       | List | 无   | 是    | 储存号码|
@@ -208,6 +263,8 @@ saveFile.generate_vcf(['13812344321', '13812344322', ...])
 
 
 #### Generate.NameGenerate().generate_txt
+> txt文件生成
+
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
 |:--------------|:-------|:----|:-----|:--------------|
 | numbers       | List | 无   | 是    | 储存号码|
