@@ -42,7 +42,7 @@ def city_data_csv_db():
 
 
 def phone_csv_db():
-    CSV_NAME = 'phone_data.csv'
+    CSV_NAME = 'phone_3.csv'
     global cur
     # 创建表
     cur.execute("""
@@ -60,7 +60,7 @@ def phone_csv_db():
     # 将CSV数据插入数据库
     with open(f"{current_dir_path}/{CSV_NAME}", 'r', encoding='utf-8') as fin:
         dr = csv.DictReader(fin)  # 使用csv.DictReader读取CSV文件
-        to_db = [(i['Phone'], i['Province'], i['City'], i['Zip Code'], i['Area Code'], i['Phone Type'], '["https://github.com/ls0f/phone"]')
+        to_db = [(i['号段'], i['省'], i['市'], i['邮政编码'], i['区号'], i['运营商'], i['来源'])
                  for i in dr]
     print(to_db)
     cur.executemany("""

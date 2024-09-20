@@ -67,7 +67,10 @@ def get_phone_codes(**conditions):
             # 将*替换为%以进行正确的匹配
             value = value[0:7]
             value = value.replace("*", "%")
-        where_clauses.append(f"{column} LIKE '%{value}%'")
+        if column == "运营商":  # 对运营商列进行特殊处理
+            # 在值的两端添加%使其变为模糊匹配
+            value = "%" + value + "%"
+        where_clauses.append(f"{column} LIKE '{value}'")
 
     if where_clauses:
         query += ' WHERE ' + ' AND '.join(where_clauses)
@@ -79,18 +82,19 @@ def get_phone_codes(**conditions):
         result.append(item[0])
 
     if len(result) == 0 and city_name:
-        result = get_phone_codes(省=city_name)
+        del conditions['市']
+        conditions['省'] = city_name
+        result = get_phone_codes(**conditions)
 
     return result
 
 
 if __name__ == '__main__':
     # print(get_area_codes(address='|南通|市辖区'))
+    # {'移动/数据上网卡', '联通', '联通/物联网', '电信/虚拟', '电信', '联通/物联网卡', '电信/卫星', '应急通信/卫星电话卡', '电信/物联网卡', '联通/虚拟运营商', '移动', '电信/数据上网卡/物联网卡', '广电', '电信/虚拟运营商', '移动/物联网卡', '工信/卫星', '联通/数据上网卡', '移动/虚拟运营商', '电信/卫星电话卡', '电信虚拟运营商', '联通/虚拟'}
     print(get_phone_codes(
         # 号段="1386*9*",
-        地区="南通"
-        # 省="江苏",
-        # 市="南通",
-        # 运营商="移动",
+        地区="南通",
+        运营商="虚拟运营商",
     ))
     # csv_db()

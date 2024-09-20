@@ -11,7 +11,7 @@
 ---
 ### Generate.IDCardGenerate
 
-使用的区域代码数据库： [db/area_code.db - city_data](./Generate/db/area_code.db)
+使用的区域代码数据库： [db/area_code.db - city_data](./Generate/db/area_code.db)<!-- @IGNORE PREVIOUS: link -->
 
 **类属性**
 
@@ -56,6 +56,10 @@ IDCard.END_YEAR = 2000
 
 **示例代码**
 ```python
+import Generate
+
+IDCard = Generate.IDCardGenerate()
+
 result = IDCard.get_id_card(
     id_card="44****2000******28",
     address="广东|揭阳|",
@@ -79,6 +83,10 @@ result = ['445201200007230328', '445201200007231128', '445201200007233828', '445
 
 **示例代码**
 ```python
+import Generate
+
+IDCard = Generate.IDCardGenerate()
+
 result = IDCard.generator_date(
     "200****1",
     constellation="白羊座",
@@ -91,7 +99,7 @@ result = ['20020321', '20020331', '20020401', '20020411']
 
 
 ### Generate.PhoneGenerate()
-使用的号段数据库 [db/area_code.db - phone_data](./Generate/db/area_code.db)
+使用的号段数据库 [db/area_code.db - phone_data](./Generate/db/area_code.db)<!-- @IGNORE PREVIOUS: link -->
 
 号段在线查询使用第三方平台 **[[查号吧](https://www.chahaoba.com), [手机号段网](https://telphone.cn)]**
 
@@ -105,6 +113,7 @@ result = ['20020321', '20020331', '20020401', '20020411']
 
 **示例代码**
 
+```python
 ```python
 import Generate
 
@@ -122,6 +131,9 @@ Phone.api_function = lambda incomplete_phone, city_name: ["1588854"]
 
 from Generate import api
 
+# 运营商号段更换
+# {"移动": ["134", "135", ...],"联通": ["130", "131", ...], "电信": ["133", "149", ...]}
+api.PHONE_ISP_CODES["移动"].append("188")
 # 更换 查号吧
 Phone.api_function = api.cha_hao_ba
 # 更换 手机号段网 [默认是此手机号段网]
@@ -135,16 +147,22 @@ Phone.api_function = api.tel_phone
 |:--------------|:-------|:----|:-----|:--------------|
 | incomplete_phone| String | 无   | 是    | 模糊手机号        |
 | city_name       | String | None   | 否    | 地区名，格式为 省或市名     |
+| isp       | String | None   | 否    | 运营商     |
 
 **示例代码**
 
 ```python
+import Generate
+
+Phone = Generate.PhoneGenerate()
+
 result = Phone.get_phone(
-    city_name="永州",
-    incomplete_phone="182***6**03"
+    city_name="毕节",
+    incomplete_phone="13*****3434",
+    isp="联通"
 )
 # 调用方法后，返回结果
-result = [18229450003, 18229450103, 18229450203, 18229450303, 18229450403, ...]
+result = [13017063434, 13035543434, 13048543434, 13048553434, ...]
 ```
 
 #### Generate.PhoneGenerate().generate_phone_area
@@ -154,16 +172,22 @@ result = [18229450003, 18229450103, 18229450203, 18229450303, 18229450403, ...]
 |:--------------|:-------|:----|:-----|:--------------|
 | incomplete_phone| String | 无   | 是    | 模糊手机号        |
 | city_name       | String | None   | 否    | 地区名，格式为 省或市名     |
+| isp       | String | None   | 否    | 运营商     |
 
 **示例代码**
 
 ```python
+import Generate
+
+Phone = Generate.PhoneGenerate()
+
 result = Phone.generate_phone_area(
-    city_name="永州",
-    incomplete_phone="182***6**03"
+    city_name="北京",
+    incomplete_phone="1*******434",
+    isp="虚拟"
 )
 # 调用方法后，返回结果
-result = ['1820746', '1822946', '1824476', '1827466']
+result = ['1621002', '1621003', '1621004', '1621001']
 ```
 
 
@@ -208,6 +232,10 @@ Name = Generate.NameGenerate(
 **示例代码**
 
 ```python
+import Generate
+
+Name = Generate.NameGenerate()
+
 Name.add_words(["汉", "字"])
 ```
 
@@ -222,6 +250,10 @@ Name.add_words(["汉", "字"])
 **示例代码**
 
 ```python
+import Generate
+
+Name = Generate.NameGenerate()
+
 result = Name.get_names(['ou', '阳', 'na', '*'])
 
 # 调用方法后，返回结果
@@ -258,6 +290,10 @@ saveFile.current_dir_path = 'C:/'
 
 **示例代码**
 ```python
+import Generate
+
+saveFile = Generate.SaveFile()
+
 saveFile.generate_vcf(['13812344321', '13812344322', ...])
 ```
 
@@ -272,6 +308,10 @@ saveFile.generate_vcf(['13812344321', '13812344322', ...])
 
 **示例代码**
 ```python
+import Generate
+
+saveFile = Generate.SaveFile()
+
 saveFile.generate_txt(['data1', 'data2'])
 ```
 

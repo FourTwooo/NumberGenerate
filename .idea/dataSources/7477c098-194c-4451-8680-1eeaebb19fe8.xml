@@ -1589,82 +1589,26 @@
     <argument id="554" parent="190">
       <Position>1</Position>
     </argument>
-    <table id="555" parent="191" name="phones"/>
-    <table id="556" parent="191" name="regions"/>
-    <table id="557" parent="191" name="sqlite_master">
+    <table id="555" parent="191" name="sqlite_master">
       <System>1</System>
     </table>
-    <column id="558" parent="555" name="id">
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="559" parent="555" name="number">
-      <DasType>INTEGER|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="560" parent="555" name="type">
-      <DasType>INTEGER|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="561" parent="555" name="region_id">
-      <DasType>INTEGER|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <foreign-key id="562" parent="555">
-      <ColNames>region_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>regions</RefTableName>
-    </foreign-key>
-    <index id="563" parent="555" name="ix_phones_number">
-      <ColNames>number</ColNames>
-    </index>
-    <key id="564" parent="555">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="565" parent="556" name="id">
-      <DasType>INTEGER|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="566" parent="556" name="province">
-      <DasType>VARCHAR|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="567" parent="556" name="city">
-      <DasType>VARCHAR|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="568" parent="556" name="zip_code">
-      <DasType>VARCHAR|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <column id="569" parent="556" name="area_code">
-      <DasType>VARCHAR|0s</DasType>
-      <Position>5</Position>
-    </column>
-    <key id="570" parent="556">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="571" parent="557" name="type">
+    <column id="556" parent="555" name="type">
       <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="572" parent="557" name="name">
+    <column id="557" parent="555" name="name">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="573" parent="557" name="tbl_name">
+    <column id="558" parent="555" name="tbl_name">
       <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="574" parent="557" name="rootpage">
+    <column id="559" parent="555" name="rootpage">
       <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="575" parent="557" name="sql">
+    <column id="560" parent="555" name="sql">
       <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>

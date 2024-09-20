@@ -30,35 +30,21 @@ class PhoneGenerate:
 
         return [int(phone) for phone in phones]
 
-    # @staticmethod
-    # def generate_complete_phones(Mobile_phone_number_range, incomplete_phone):
-    #     complete_phones = []
-    #     new_phone = incomplete_phone[7:11]
-    #     phone_one = Mobile_phone_number_range + new_phone
-    #
-    #     js_count = sum(1 for digit in phone_one if digit != '*')
-    #
-    #     start = phone_one.replace('*', '0')
-    #     end = phone_one.replace('*', '9')
-    #
-    #     phone_range = range(int(start), int(end) + 1)
-    #     for phone_demo in phone_range:
-    #         list_phone = list(phone_one)
-    #         pd_js = sum(1 for i in range(len(list_phone)) if list_phone[i] == str(phone_demo)[i])
-    #
-    #         if pd_js == js_count:
-    #             complete_phones.append(phone_demo)
-    #
-    #     return complete_phones
-
-    def generate_phone_area(self, incomplete_phone, city_name=None):
+    def generate_phone_area(self, incomplete_phone, city_name=None, isp=None):
+        """
+        :param incomplete_phone:    模糊手机号
+        :param city_name:           地区
+        :param isp:                 运营商
+        :return:
+        """
+        # {'移动/数据上网卡', '联通', '联通/物联网', '电信/虚拟', '电信', '联通/物联网卡', '电信/卫星', '应急通信/卫星电话卡', '电信/物联网卡', '联通/虚拟运营商', '移动', '电信/数据上网卡/物联网卡', '广电', '电信/虚拟运营商', '移动/物联网卡', '工信/卫星', '联通/数据上网卡', '移动/虚拟运营商', '电信/卫星电话卡', '电信虚拟运营商', '联通/虚拟'}
         if self.is_db:
-            phoneRangeList = self.db_function(号段=incomplete_phone, 地区=city_name, 运营商=None)
+            phoneRangeList = self.db_function(号段=incomplete_phone, 地区=city_name, 运营商=isp)
         else:
             if city_name:
-                phoneRangeList = self.api_function(incomplete_phone, city_name)
+                phoneRangeList = self.api_function(incomplete_phone, city_name, isp)
             else:
-                phoneRangeList = [str(_) for _ in range(1300000, 1999999)]
+                phoneRangeList = [str(_) for _ in range(1300000, 1999999+1)]
 
         # 检测是否为正常号段n y
         phoneRange = []
@@ -70,50 +56,19 @@ class PhoneGenerate:
 
         return phoneRange
 
-    # def get_phone(self, city_name, incomplete_phone):
-    #     """
-    #     :param city_name:               市
-    #     :param incomplete_phone:        手机号
-    #     :return:                        [phone...]
-    #     """
-    #
-    #     def get_data(data):
-    #         self.complete_phone_list += data.result()
-    #
-    #     self.complete_phone_list = []
-    #     Mobile_phone_number_range_phones = self.generate_phone_area(
-    #         city_name=city_name,
-    #         incomplete_phone=incomplete_phone
-    #     )
-    #     # print(f'使用api:{self.mode} 查询号段[{len(Mobile_phone_number_range_phones)}]:{Mobile_phone_number_range_phones}')
-    #     start_time = time.time()
-    #     max_workers = len(Mobile_phone_number_range_phones)
-    #     if max_workers == 0:
-    #         raise Generate.errors.NumberValueError(f"{city_name} {incomplete_phone} 未查询到符合号段")
-    #     with ThreadPoolExecutor(max_workers=max_workers) as pool:
-    #         for hd in Mobile_phone_number_range_phones:
-    #             task = pool.submit(
-    #                 self.generate_complete_phones,
-    #                 Mobile_phone_number_range=hd,
-    #                 incomplete_phone=incomplete_phone
-    #             )
-    #             task.add_done_callback(self.get_data)
-    #
-    #     end_time = time.time()
-    #     print(f'生成手机数量{len(self.complete_phone_list)} 耗时:{end_time - start_time}')
-    #     return self.complete_phone_list
-
-    def get_phone(self, incomplete_phone, city_name=None):
+    def get_phone(self, incomplete_phone, city_name=None, isp=None):
         """
         :param incomplete_phone:        手机号
         :param city_name:               市
+        :param isp:                     运营商
         :return:                        [phone...]
         """
         # import time
         # start_time = time.time()
         phoneRange = self.generate_phone_area(
             city_name=city_name,
-            incomplete_phone=incomplete_phone
+            incomplete_phone=incomplete_phone,
+            isp=isp
         )
 
         def map_start(arg):
@@ -140,8 +95,9 @@ class PhoneGenerate:
 if __name__ == '__main__':
     phone_bull = PhoneGenerate()
     phone_numbers = phone_bull.generate_phone_area(
-        city_name="永州",
-        incomplete_phone="182***6**03"
+        city_name="北京",
+        incomplete_phone="1*******434",
+        isp="虚拟"
     )
     # phone_numbers = phone_bull.get_phone(city_name="南通", incomplete_phone="177******90")
     print(len(phone_numbers), phone_numbers[:20])
