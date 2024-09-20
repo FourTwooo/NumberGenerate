@@ -23,9 +23,9 @@ if __name__ == '__main__':
     # Phone.api_function = api.cha_hao_baw
     # Phone.api_function = api.tel_phone
     phones = Phone.get_phone(
-        city_name="北京",
-        incomplete_phone="1*******434",
-        isp="虚拟"
+        # city_name="北京",
+        incomplete_phone="1******3434",
+        # isp="虚拟"
     )
     print(len(phones), phones[:20])
 

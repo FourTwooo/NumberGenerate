@@ -44,12 +44,17 @@ class PhoneGenerate:
             if city_name:
                 phoneRangeList = self.api_function(incomplete_phone, city_name, isp)
             else:
-                phoneRangeList = [str(_) for _ in range(1300000, 1999999+1)]
+                prefixes = []
+                for value in Generate.api.PHONE_ISP_CODES.values():
+                    prefixes += value
+                phoneRangeList = [prefix + str(i).zfill(4) for prefix in prefixes for i in range(10000)]
+                # phoneRangeList = [str(_) for _ in range(1300000, 1999999+1)]
 
         # 检测是否为正常号段n y
         phoneRange = []
         for Mobile_phone_number in phoneRangeList:
             hd_js_count = sum(1 for i in range(7) if incomplete_phone[i] != '*')
+            # print(Mobile_phone_number)
             pd2_js_count = sum(1 for i in range(7) if incomplete_phone[i] == str(Mobile_phone_number)[i])
             if hd_js_count == pd2_js_count:
                 phoneRange.append(Mobile_phone_number)

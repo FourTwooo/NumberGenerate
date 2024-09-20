@@ -29,10 +29,17 @@ def cha_hao_ba(incomplete_phone, city_name, isp=None):
     headers = {
         "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
     }
+    if isp and "*" in incomplete_phone[0:3]:
+        phone_codes = get_codes_by_carrier_and_segment(carrier=isp, segment=incomplete_phone[0:3])
+    else:
+        phone_codes = [incomplete_phone[0:3]]
 
-    response = requests.get(url=f'https://www.chahaoba.com/{city_name}{incomplete_phone[0:3]}',
-                            headers=headers)
-    Mobile_phone_number_range_list = re.findall('title="([0-9]{4,7})"', response.text)
+    Mobile_phone_number_range_list = []
+    for phone_code in phone_codes:
+        response = requests.get(url=f'https://www.chahaoba.com/{city_name}{phone_code}',
+                                headers=headers)
+        Mobile_phone_number_range_list += re.findall('title="([0-9]{4,7})"', response.text)
+
     return Mobile_phone_number_range_list
 
 
@@ -69,4 +76,4 @@ def tel_phone(incomplete_phone, city_name, isp=None):
 if __name__ == '__main__':
     # print(tel_phone('138********', '淮安'))
     print(get_codes_by_carrier_and_segment("联通", "13*"))  # 返回结果：['130', '131', '132']
-    print(get_codes_by_carrier_and_segment("联通", "1*5"))  # 返回结果：['145', '155', '156', '175', '185']
+    # print(get_codes_by_carrier_and_segment("联通", "1*5"))  # 返回结果：['145', '155', '156', '175', '185']
