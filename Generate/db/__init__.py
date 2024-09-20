@@ -4,40 +4,12 @@ import sqlite3
 
 current_dir_path = os.path.dirname(os.path.abspath(__file__))
 # 创建SQLite连接
-conn = sqlite3.connect(f"{current_dir_path}/city_db_data.db")
+conn = sqlite3.connect(f"{current_dir_path}/area_code.db")
 cur = conn.cursor()
 
 
-def csv_db():
-    global cur
-    # 创建表
-    cur.execute("""
-        CREATE TABLE city_data(
-            省 TEXT,
-            省行政区划代码 TEXT,
-            市 TEXT,
-            市行政区划代码 TEXT,
-            区 TEXT,
-            区行政区划代码 TEXT,
-            来源 TEXT
-        )
-    """)
-
-    # 将CSV数据插入数据库
-    with open(f"{current_dir_path}/city_db_data.csv", 'r', encoding='utf-8') as fin:
-        dr = csv.DictReader(fin)  # 使用csv.DictReader读取CSV文件
-        to_db = [(i['省'], i['省行政区划代码'], i['市'], i['市行政区划代码'], i['区'], i['区行政区划代码'], i['来源'])
-                 for i in dr]
-
-    cur.executemany("""
-        INSERT INTO city_data (省, 省行政区划代码, 市, 市行政区划代码, 区, 区行政区划代码, 来源)
-        VALUES (?, ?, ?, ?, ?, ?, ?);
-    """, to_db)
-    conn.commit()
-
-
 # import pandas as pd
-# table = pd.read_csv(f"{current_dir_path}/city_db_data.csv")
+# table = pd.read_csv(f"{current_dir_path}/area_code.csv")
 #
 #
 # def get_area_codes(address: str):
@@ -77,14 +49,48 @@ def get_area_codes(address: str):
     for item in cur.fetchall():
         # print(item)
         result.append(item[3])
+    return result
+
+
+def get_phone_codes(**conditions):
+    city_name = conditions.get('地区')
+    if city_name:
+        conditions['市'] = city_name
+        del conditions['地区']
+
+    query = 'SELECT * FROM phone_data'
+    where_clauses = []
+    for column, value in conditions.items():
+        if value is None:
+            continue
+        if column == "号段":  # 对号段列进行特殊处理
+            # 将*替换为%以进行正确的匹配
+            value = value[0:7]
+            value = value.replace("*", "%")
+        where_clauses.append(f"{column} LIKE '%{value}%'")
+
+    if where_clauses:
+        query += ' WHERE ' + ' AND '.join(where_clauses)
+    # print(query)
+    cur.execute(query)
+    result = []
+    for item in cur.fetchall():
+        # print(item)
+        result.append(item[0])
+
+    if len(result) == 0 and city_name:
+        result = get_phone_codes(省=city_name)
 
     return result
 
 
 if __name__ == '__main__':
-    print(get_area_codes(
-        address='|南通|市辖区'
+    # print(get_area_codes(address='|南通|市辖区'))
+    print(get_phone_codes(
+        # 号段="1386*9*",
+        地区="南通"
+        # 省="江苏",
+        # 市="南通",
+        # 运营商="移动",
     ))
-
     # csv_db()
-

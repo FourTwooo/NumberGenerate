@@ -9,7 +9,7 @@
 所有内容仅限用于学习和研究目的。不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负，通过使用项目代码随之而来的风险与本人无关。
 ***
 > IDCardGenerate
->> 区域代码使用本地数据 **\[db/city_db_data.csv\]**
+>> 区域代码使用本地数据库 **\[db/area_code.db - city_data\]**
 
 ```python
 
@@ -50,12 +50,15 @@ result = ['445201200007230328', '445201200007231128', '445201200007233828', '445
 ```
 
 > PhoneGenerate
->> 号段使用第三方平台 **[[查号吧](https://www.chahaoba.com), [手机号段网](https://telphone.cn)]**
+>> 本地数据库 **\[db/area_code.db - phone_data\]**
+>> 号段在线查询使用第三方平台 **[[查号吧](https://www.chahaoba.com), [手机号段网](https://telphone.cn)]**
 
 ```python
 import Generate
 
 Phone = Generate.PhoneGenerate()
+# 关闭离线(本地数据库)查询
+Phone.is_db = False
 
 # 更改自定义查询接口
 '''

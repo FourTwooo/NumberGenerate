@@ -4,21 +4,16 @@ import Generate.errors
 from Generate.db import get_area_codes
 
 
-# def get_area_codes(address) -> list:
-#     return ['320601', '320602']
-
-
 class IDCardGenerate:
 
     def __init__(self):
 
-        self.api_function = get_area_codes
+        self.db_function = get_area_codes
 
         # 起始年份设定
         self.START_YEAR = 1900
         # 终止年份设定
         self.END_YEAR = datetime.now().year + 1
-        # self.END_YEAR = 2025
         # 星座日期表
         self.CONSTELLATIONS = {
             "白羊座": ("0321", "0419"),
@@ -143,7 +138,7 @@ class IDCardGenerate:
 
         check_sum = sum([int(a) * b for a, b in zip(id_number, coefficients)])
         check_index = check_sum % 11
-        check_code = check_code_list[check_index]  # 获取验证码
+        check_code = check_code_list[check_index]  # 校验码
 
         return check_code
 
@@ -151,7 +146,7 @@ class IDCardGenerate:
         if "*" not in area_code:
             return [area_code]
 
-        city_area_codes = self.api_function(address)
+        city_area_codes = self.db_function(address)
 
         success_city_area_codes = []
         for city_area_code in city_area_codes:
@@ -191,11 +186,13 @@ class IDCardGenerate:
         if len(id_card) != 18:
             raise Generate.errors.NumberValueError(f'{id_card} length must be 18 characters')
 
-        id_cards = []
         area_codes = self.generator_area_code(area_code=id_card[0:6], address=address)
         date_codes = self.generator_date(date_str=id_card[6:14], constellation=constellation, zodiac=zodiac)
         order_codes = self.generate_order_code(pattern=id_card[14:17], gender=gender)
 
+        # import time
+        # start_time = time.time()
+        id_cards = []
         for area_code in area_codes:
             for date_code in date_codes:
                 for order_code in order_codes:
@@ -206,7 +203,7 @@ class IDCardGenerate:
                             continue
                     id_cards.append(f'{area_code}{date_code}{order_code}{check_code}')
 
-        # print(len(id_cards), id_cards)
+        # print(time.time() - start_time)
         return id_cards
 
 
