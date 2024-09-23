@@ -1,4 +1,3 @@
-import csv
 import os
 import sqlite3
 
@@ -8,6 +7,7 @@ conn = sqlite3.connect(f"{current_dir_path}/area_code.db")
 cur = conn.cursor()
 
 
+# import csv
 # import pandas as pd
 # table = pd.read_csv(f"{current_dir_path}/area_code.csv")
 #
