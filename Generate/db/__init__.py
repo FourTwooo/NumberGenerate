@@ -1,5 +1,6 @@
 import os
 import sqlite3
+from functools import lru_cache
 
 current_dir_path = os.path.dirname(os.path.abspath(__file__))
 # 创建SQLite连接
@@ -35,6 +36,7 @@ cur = conn.cursor()
 #         result.append(area_code)
 #     return result
 
+@lru_cache
 def get_area_codes(address: str):
     province, city, area = address.split("|")
 
@@ -52,6 +54,7 @@ def get_area_codes(address: str):
     return result
 
 
+@lru_cache
 def get_phone_codes(**conditions):
     city_name = conditions.get('地区')
     if city_name:
