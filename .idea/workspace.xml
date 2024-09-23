@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="更新文档和数据库">
+    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="更新文档和数据库,缓存">
       <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Generate/Phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/Phone.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/db/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/db/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +215,7 @@
       <workItem from="1726717487885" duration="63000" />
       <workItem from="1726723355130" duration="5421000" />
       <workItem from="1726731696494" duration="38873000" />
-      <workItem from="1727053172935" duration="3708000" />
+      <workItem from="1727053172935" duration="4379000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1725439067379</created>
@@ -449,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1727055583978</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="更新文档和数据库,缓存">
+      <created>1727057908848</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1727057908848</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +485,8 @@
     <MESSAGE value="修复数据库bug数据.优化代码" />
     <MESSAGE value="更新文档" />
     <MESSAGE value="更新文档和数据库" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新文档和数据库" />
+    <MESSAGE value="更新文档和数据库,缓存" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新文档和数据库,缓存" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -495,7 +502,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NumberGenerate$csv_db.coverage" NAME="csv_db 覆盖结果" MODIFIED="1726908084503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/db" />
     <SUITE FILE_PATH="coverage/NumberGenerate$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1726819360522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/db" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$main.coverage" NAME="main 覆盖结果" MODIFIED="1727057873589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$main.coverage" NAME="main 覆盖结果" MODIFIED="1727058458380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NumberGenerate$demo.coverage" NAME="demo 覆盖结果" MODIFIED="1726812451776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NumberGenerate$Phone.coverage" NAME="Phone 覆盖结果" MODIFIED="1726823767724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
     <SUITE FILE_PATH="coverage/NumberGenerate$get_phone_api.coverage" NAME="get_phone_api 覆盖结果" MODIFIED="1726823033957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/api" />

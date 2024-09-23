@@ -1,5 +1,4 @@
 from concurrent.futures import ThreadPoolExecutor
-from functools import lru_cache
 
 import Generate.errors
 from Generate import api, db
@@ -69,15 +68,14 @@ class PhoneGenerate:
         :param isp:                     运营商
         :return:                        [phone...]
         """
-        import time
-        start_time = time.time()
+        # import time
+        # start_time = time.time()
         phoneRange = self.generate_phone_area(
             city_name=city_name,
             incomplete_phone=incomplete_phone,
             isp=isp
         )
 
-        @lru_cache
         def map_start(arg):
             # print(arg)
             return self.generate_complete_phones(arg[0], arg[1])
@@ -85,7 +83,7 @@ class PhoneGenerate:
         if not phoneRange:
             raise Generate.errors.NumberValueError(f"{city_name} {incomplete_phone} 未查询到符合号段")
         tasks = [(p, incomplete_phone) for p in phoneRange]
-
+        # print(len(tasks), tasks)
         max_workers = 100 if len(phoneRange) >= 100 else len(phoneRange)
         with ThreadPoolExecutor(max_workers=max_workers) as pool:
             results = pool.map(map_start, tasks)
@@ -94,8 +92,8 @@ class PhoneGenerate:
         for i in results:
             complete_phone_list += i
 
-        end_time = time.time()
-        print(f'生成手机数量{len(complete_phone_list)} 耗时:{end_time - start_time}')
+        # end_time = time.time()
+        # print(f'生成手机数量{len(complete_phone_list)} 耗时:{end_time - start_time}')
         return complete_phone_list
 
 
