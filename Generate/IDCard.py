@@ -1,5 +1,6 @@
 from datetime import timedelta, datetime
 
+from Generate.lunardate import LunarDate
 import Generate.errors
 from Generate.db import get_area_codes
 
@@ -57,13 +58,15 @@ class IDCardGenerate:
         # 基于模式过滤生成的数据
         return [code for code in codes if all(a == b or b == '*' for a, b in zip(code, pattern))]
 
-    def generator_date(self, date_str, constellation='未知星座', zodiac='未知生肖'):
+    def generator_date(self, date_str, constellation='未知星座', zodiac='未知生肖', lunar_birthday=None):
         """
-        :param date_str:        "****[年]**[月]**[日]"
+        :param date_str:        公历日期"****[年]**[月]**[日]"
         :param constellation:   星座
         :param zodiac:          生肖
+        :param lunar_birthday:  农历的公历生日
         :return:
         """
+
         temp_start = date_str[:4].replace('*', '0')
         temp_end = date_str[:4].replace('*', '9')
         start_year_input = int(temp_start)
@@ -77,18 +80,27 @@ class IDCardGenerate:
 
         all_dates = []
         for year in range(start_year, end_year):
-            start_date = datetime.strptime(str(year) + "0101", "%Y%m%d")
-            end_date = datetime.strptime(str(year + 1) + "0101", "%Y%m%d")
-            while start_date != end_date:
-                date_str_format = start_date.strftime("%Y%m%d")
-                flag = True
-                for i in range(8):
-                    if date_str[i] != '*' and date_str[i] != date_str_format[i]:
-                        flag = False
-                        break
-                if flag:
-                    all_dates.append(date_str_format)
-                start_date += timedelta(days=1)
+            if lunar_birthday:
+                lunar_date = LunarDate.fromSolarDate(
+                    int(lunar_birthday[0:4]),
+                    int(lunar_birthday[4:6]),
+                    int(lunar_birthday[6:8])
+                )
+                solar_date = LunarDate(year, lunar_date.month, lunar_date.day, lunar_date.isLeapMonth).toSolarDate()
+                all_dates.append(f"{solar_date.year}{solar_date.month:02}{solar_date.day:02}")
+            else:
+                start_date = datetime.strptime(str(year) + "0101", "%Y%m%d")
+                end_date = datetime.strptime(str(year + 1) + "0101", "%Y%m%d")
+                while start_date != end_date:
+                    date_str_format = start_date.strftime("%Y%m%d")
+                    flag = True
+                    for i in range(8):
+                        if date_str[i] != '*' and date_str[i] != date_str_format[i]:
+                            flag = False
+                            break
+                    if flag:
+                        all_dates.append(date_str_format)
+                    start_date += timedelta(days=1)
 
         def filter_dates(dates, date_range):
             start_month, start_day = int(date_range[0][:2]), int(date_range[0][2:])
@@ -125,6 +137,7 @@ class IDCardGenerate:
 
         if zodiac != "未知生肖":
             all_dates = filter_zodiac(all_dates, zodiac)
+
         return all_dates
 
     @staticmethod
@@ -166,7 +179,8 @@ class IDCardGenerate:
             address: str = None,
             gender: str = None,
             constellation: str = None,
-            zodiac: str = None
+            zodiac: str = None,
+            lunar_birthday: str = None
     ):
         """
         :param id_card:         身份证号
@@ -174,6 +188,7 @@ class IDCardGenerate:
         :param gender:          性别
         :param constellation    星座
         :param zodiac:          生肖
+        :param lunar_birthday:  农历的公历生日
         :return: [id_card...]
         """
         if address is None:
@@ -187,9 +202,11 @@ class IDCardGenerate:
             raise Generate.errors.NumberValueError(f'{id_card} length must be 18 characters')
 
         area_codes = self.generator_area_code(area_code=id_card[0:6], address=address)
-        date_codes = self.generator_date(date_str=id_card[6:14], constellation=constellation, zodiac=zodiac)
+        # print(id_card[6:14])
+        date_codes = self.generator_date(date_str=id_card[6:14], constellation=constellation, zodiac=zodiac, lunar_birthday=lunar_birthday)
         order_codes = self.generate_order_code(pattern=id_card[14:17], gender=gender)
 
+        # print(area_codes, date_codes, order_codes)
         # import time
         # start_time = time.time()
         id_cards = []
@@ -209,16 +226,10 @@ class IDCardGenerate:
 
 if __name__ == '__main__':
     IDCard = IDCardGenerate()
-    # date_data = IDCard.get_id_card(
-    #     id_card="******20000821****",
-    #     address="广西|柳州|",
-    #     gender="女",
-    #     constellation="狮子座",
-    #     zodiac="龙"
+    print(IDCard.generator_date('20******', lunar_birthday="20240513", constellation="金牛座", zodiac="马"))
+    # date_data = IDCard.generator_date(
+    #     "200****1",
+    #     constellation="白羊座",
+    #     zodiac="马"
     # )
-    date_data = IDCard.generator_date(
-        "200****1",
-        constellation="白羊座",
-        zodiac="马"
-    )
-    print(len(date_data), date_data)
+    # print(len(date_data), date_data)

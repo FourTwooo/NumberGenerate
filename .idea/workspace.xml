@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="更新文档和数据库,缓存">
+    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="负优化取消">
+      <change afterPath="$PROJECT_DIR$/Generate/User.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11a0aaac-276d-400c-8bfe-946cfb8f65d6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_9_20_10_50____1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_9_20_10_50_取消提交了更改_[更改]1/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/Phone.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/Phone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate/IDCard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/IDCard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate/db/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/db/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Administrator/Desktop/NumberGenerate/NumberGenerate/Generate/db",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/NumberGenerate/NumberGenerate/Generate",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,13 +62,18 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\NumberGenerate\NumberGenerate\Generate" />
       <recent name="C:\Users\Administrator\Desktop\NumberGenerate\NumberGenerate\Generate\db" />
       <recent name="C:\Users\Administrator\Desktop\NumberGenerate\NumberGenerate" />
-      <recent name="C:\Users\Administrator\Desktop\NumberGenerate\NumberGenerate\Generate" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\NumberGenerate\NumberGenerate\Generate\db" />
@@ -68,8 +81,8 @@
       <recent name="C:\Users\Administrator\Desktop\NumberGenerate\NumberGenerate\Generate" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="Phone" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.IDCard">
+    <configuration name="IDCard" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NumberGenerate" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,7 +95,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Generate/Phone.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Generate/IDCard.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="User" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NumberGenerate" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Generate" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Generate/User.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,7 +148,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="csv_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NumberGenerate" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -121,34 +156,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Generate/db" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Generate/db/csv_db.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="get_phone_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NumberGenerate" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Generate/api" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Generate/api/get_phone_api.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -181,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.IDCard" />
+        <item itemvalue="Python.demo" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.csv_db" />
-        <item itemvalue="Python.Phone" />
-        <item itemvalue="Python.get_phone_api" />
         <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.User" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +228,12 @@
       <workItem from="1726717487885" duration="63000" />
       <workItem from="1726723355130" duration="5421000" />
       <workItem from="1726731696494" duration="38873000" />
-      <workItem from="1727053172935" duration="4379000" />
+      <workItem from="1727053172935" duration="8086000" />
+      <workItem from="1727228493945" duration="5244000" />
+      <workItem from="1727336587498" duration="4829000" />
+      <workItem from="1727341513088" duration="140000" />
+      <workItem from="1727582882326" duration="164000" />
+      <workItem from="1728698668259" duration="8582000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1725439067379</created>
@@ -455,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1727057908848</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="负优化取消">
+      <created>1727058586255</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1727058586255</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,7 +511,8 @@
     <MESSAGE value="更新文档" />
     <MESSAGE value="更新文档和数据库" />
     <MESSAGE value="更新文档和数据库,缓存" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新文档和数据库,缓存" />
+    <MESSAGE value="负优化取消" />
+    <option name="LAST_COMMIT_MESSAGE" value="负优化取消" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -501,12 +527,13 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NumberGenerate$csv_db.coverage" NAME="csv_db 覆盖结果" MODIFIED="1726908084503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/db" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1726819360522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/db" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$main.coverage" NAME="main 覆盖结果" MODIFIED="1727058458380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$demo.coverage" NAME="demo 覆盖结果" MODIFIED="1726812451776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$Phone.coverage" NAME="Phone 覆盖结果" MODIFIED="1726823767724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$User.coverage" NAME="User 覆盖结果" MODIFIED="1727339330965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1727340661022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/db" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$main.coverage" NAME="main 覆盖结果" MODIFIED="1727340946889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$demo.coverage" NAME="demo 覆盖结果" MODIFIED="1728705314395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$Phone.coverage" NAME="Phone 覆盖结果" MODIFIED="1727233214153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
     <SUITE FILE_PATH="coverage/NumberGenerate$get_phone_api.coverage" NAME="get_phone_api 覆盖结果" MODIFIED="1726823033957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/api" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$__init____1_.coverage" NAME="__init__ (1) 覆盖结果" MODIFIED="1726796736205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/db" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$IDCard.coverage" NAME="IDCard 覆盖结果" MODIFIED="1726809620142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$__init____1_.coverage" NAME="__init__ (1) 覆盖结果" MODIFIED="1727337494089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$IDCard.coverage" NAME="IDCard 覆盖结果" MODIFIED="1728709348648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
   </component>
 </project>

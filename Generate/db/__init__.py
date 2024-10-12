@@ -49,7 +49,7 @@ def get_area_codes(address: str):
 
     result = []
     for item in cur.fetchall():
-        # print(item)
+        print(item)
         result.append(item[3])
     return result
 
@@ -93,11 +93,10 @@ def get_phone_codes(**conditions):
 
 
 if __name__ == '__main__':
-    # print(get_area_codes(address='|南通|市辖区'))
+    print(get_area_codes(address='四川|巴中|'))
     # {'移动/数据上网卡', '联通', '联通/物联网', '电信/虚拟', '电信', '联通/物联网卡', '电信/卫星', '应急通信/卫星电话卡', '电信/物联网卡', '联通/虚拟运营商', '移动', '电信/数据上网卡/物联网卡', '广电', '电信/虚拟运营商', '移动/物联网卡', '工信/卫星', '联通/数据上网卡', '移动/虚拟运营商', '电信/卫星电话卡', '电信虚拟运营商', '联通/虚拟'}
-    print(get_phone_codes(
-        # 号段="1386*9*",
-        地区="南通",
-        运营商="虚拟运营商",
-    ))
+    # print(get_phone_codes(
+    #     号段="1386*9*",
+    #     地区="南通",
+    # ))
     # csv_db()

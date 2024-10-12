@@ -53,6 +53,7 @@ IDCard.END_YEAR = 2000
 | gender        | String |  None  | 否    | 性别，可选为"男"或"女" |
 | constellation | String | "未知星座"   | 否    | 星座，如"狮子座"     |
 | zodiac        | String | "未知生肖"   | 否    | 生肖，如"龙"       |
+| lunar_birthday        | String |  None  | 否    | 农历的公历生日 |
 
 **示例代码**
 ```python
@@ -80,6 +81,7 @@ result = ['445201200007230328', '445201200007231128', '445201200007233828', '445
 | date_str       | String | 无   | 是    | 模糊年份日期 - "****\[年\]\*\*\[月\]\*\*\[日\]"  |
 | constellation  | String | "未知星座"   | 否    | 星座     |
 | zodiac        | String |  "未知生肖"  | 否    | 生肖 |
+| lunar_birthday        | String |  None  | 否    | 农历的公历生日 |
 
 **示例代码**
 ```python
@@ -88,13 +90,14 @@ import Generate
 IDCard = Generate.IDCardGenerate()
 
 result = IDCard.generator_date(
-    "200****1",
-    constellation="白羊座",
+    '20******', 
+    lunar_birthday="20240513", 
+    constellation="金牛座", 
     zodiac="马"
 )
 
 # 调用方法后，返回结果
-result = ['20020321', '20020331', '20020401', '20020411']
+result = ['20020517', '20140504']
 ```
 
 
