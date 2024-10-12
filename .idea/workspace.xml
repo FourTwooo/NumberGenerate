@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="负优化取消">
+    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="添加农历生成条件">
       <change afterPath="$PROJECT_DIR$/Generate/User.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11a0aaac-276d-400c-8bfe-946cfb8f65d6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_9_20_10_50____1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2024_9_20_10_50_取消提交了更改_[更改]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/IDCard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/IDCard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/db/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/db/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +223,7 @@
       <workItem from="1727336587498" duration="4829000" />
       <workItem from="1727341513088" duration="140000" />
       <workItem from="1727582882326" duration="164000" />
-      <workItem from="1728698668259" duration="8582000" />
+      <workItem from="1728698668259" duration="8992000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1725439067379</created>
@@ -480,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1727058586255</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="添加农历生成条件">
+      <created>1728714418822</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1728714418822</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +509,8 @@
     <MESSAGE value="更新文档和数据库" />
     <MESSAGE value="更新文档和数据库,缓存" />
     <MESSAGE value="负优化取消" />
-    <option name="LAST_COMMIT_MESSAGE" value="负优化取消" />
+    <MESSAGE value="添加农历生成条件" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加农历生成条件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -534,6 +532,6 @@
     <SUITE FILE_PATH="coverage/NumberGenerate$Phone.coverage" NAME="Phone 覆盖结果" MODIFIED="1727233214153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
     <SUITE FILE_PATH="coverage/NumberGenerate$get_phone_api.coverage" NAME="get_phone_api 覆盖结果" MODIFIED="1726823033957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/api" />
     <SUITE FILE_PATH="coverage/NumberGenerate$__init____1_.coverage" NAME="__init__ (1) 覆盖结果" MODIFIED="1727337494089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$IDCard.coverage" NAME="IDCard 覆盖结果" MODIFIED="1728709348648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$IDCard.coverage" NAME="IDCard 覆盖结果" MODIFIED="1728714308273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
   </component>
 </project>
