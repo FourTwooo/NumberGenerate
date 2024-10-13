@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="添加农历生成条件">
-      <change afterPath="$PROJECT_DIR$/Generate/User.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="补" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -225,6 +221,7 @@
       <workItem from="1727341513088" duration="140000" />
       <workItem from="1727582882326" duration="164000" />
       <workItem from="1728698668259" duration="9825000" />
+      <workItem from="1728806961473" duration="272000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1725439067379</created>
@@ -485,7 +482,35 @@
       <option name="project" value="LOCAL" />
       <updated>1728714670224</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="补">
+      <created>1728806992953</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1728806992953</updated>
+    </task>
+    <task id="LOCAL-00039" summary="补">
+      <created>1728807044504</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1728807044504</updated>
+    </task>
+    <task id="LOCAL-00040" summary="补">
+      <created>1728807087941</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1728807087941</updated>
+    </task>
+    <task id="LOCAL-00041" summary="补">
+      <created>1728807125842</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1728807125842</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +543,8 @@
     <MESSAGE value="更新文档和数据库,缓存" />
     <MESSAGE value="负优化取消" />
     <MESSAGE value="添加农历生成条件" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加农历生成条件" />
+    <MESSAGE value="补" />
+    <option name="LAST_COMMIT_MESSAGE" value="补" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
