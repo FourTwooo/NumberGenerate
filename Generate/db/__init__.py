@@ -49,7 +49,7 @@ def get_area_codes(address: str):
 
     result = []
     for item in cur.fetchall():
-        print(item)
+        # print(item)
         result.append(item[3])
     return result
 

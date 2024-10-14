@@ -1,6 +1,6 @@
 from datetime import timedelta, datetime
 
-from Generate.lunardate import LunarDate
+from lunardate import LunarDate
 import Generate.errors
 from Generate.db import get_area_codes
 
