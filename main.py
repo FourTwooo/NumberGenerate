@@ -8,9 +8,9 @@ if __name__ == '__main__':
     date_data = IDCard.get_id_card(
         id_card="51370119***813008X",
         # address="广东|揭阳|",
-        gender="男",
-        constellation="狮子座",
-        zodiac="龙"
+        # gender="男",
+        # constellation="狮子座",
+        # zodiac="龙"
     )
     print(len(date_data), str(date_data)[:200])
 
