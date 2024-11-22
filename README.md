@@ -1,12 +1,15 @@
 # NumberGenerate
 虚拟信息生成器，提供身份证号码、电话号码、姓名等数据的生成和保存功能。支持多种自定义参数设置，以适应不同的使用场景。
-
+```cmd
+pip install NumberGenerate
+```
 ## 开发环境
 - python 3.8.0
 
 - windows11
 
 - 第三方库详见 [requirements.txt](./requirements.txt)<!-- @IGNORE PREVIOUS: link -->
+
 
 ---
 # 免责声明
