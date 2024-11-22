@@ -3,11 +3,29 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f81894c7-5381-472d-b09e-75a7186b72c7" name="更改" comment="补">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate/db/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Generate/db/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +60,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="28a0d926-a000-457e-b94c-7324356dd742" />
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -51,6 +70,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -220,6 +249,9 @@
       <workItem from="1728806961473" duration="272000" />
       <workItem from="1728807266264" duration="704000" />
       <workItem from="1728891066452" duration="236000" />
+      <workItem from="1731999169500" duration="960000" />
+      <workItem from="1732175014183" duration="108000" />
+      <workItem from="1732244300719" duration="1217000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1725439067379</created>
@@ -515,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728807333610</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="补">
+      <created>1731999218634</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1731999218634</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,6 +570,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="提交" />
@@ -551,6 +591,28 @@
     <MESSAGE value="补" />
     <option name="LAST_COMMIT_MESSAGE" value="补" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="1663" height="342" key="GridCell.Tab.0.bottom" timestamp="1732175122556">
+      <screen x="0" y="0" width="1707" height="1067" />
+    </state>
+    <state width="1663" height="342" key="GridCell.Tab.0.bottom/0.0.1707.1067/2560.510.1920.1080@0.0.1707.1067" timestamp="1732175122556" />
+    <state width="1663" height="342" key="GridCell.Tab.0.center" timestamp="1732175122556">
+      <screen x="0" y="0" width="1707" height="1067" />
+    </state>
+    <state width="1663" height="342" key="GridCell.Tab.0.center/0.0.1707.1067/2560.510.1920.1080@0.0.1707.1067" timestamp="1732175122556" />
+    <state width="1663" height="342" key="GridCell.Tab.0.left" timestamp="1732175122556">
+      <screen x="0" y="0" width="1707" height="1067" />
+    </state>
+    <state width="1663" height="342" key="GridCell.Tab.0.left/0.0.1707.1067/2560.510.1920.1080@0.0.1707.1067" timestamp="1732175122556" />
+    <state width="1663" height="342" key="GridCell.Tab.0.right" timestamp="1732175122556">
+      <screen x="0" y="0" width="1707" height="1067" />
+    </state>
+    <state width="1663" height="342" key="GridCell.Tab.0.right/0.0.1707.1067/2560.510.1920.1080@0.0.1707.1067" timestamp="1732175122556" />
+    <state x="668" y="447" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1731999209020">
+      <screen x="0" y="0" width="1707" height="1067" />
+    </state>
+    <state x="668" y="447" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1707.1067/2560.510.1920.1080@0.0.1707.1067" timestamp="1731999209020" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -563,14 +625,14 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NumberGenerate$csv_db.coverage" NAME="csv_db 覆盖结果" MODIFIED="1726908084503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/db" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$User.coverage" NAME="User 覆盖结果" MODIFIED="1727339330965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
     <SUITE FILE_PATH="coverage/NumberGenerate$__init__.coverage" NAME="__init__ 覆盖结果" MODIFIED="1727340661022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/db" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$main.coverage" NAME="main 覆盖结果" MODIFIED="1728891294486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$demo.coverage" NAME="demo 覆盖结果" MODIFIED="1728705314395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$Phone.coverage" NAME="Phone 覆盖结果" MODIFIED="1727233214153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
-    <SUITE FILE_PATH="coverage/NumberGenerate$get_phone_api.coverage" NAME="get_phone_api 覆盖结果" MODIFIED="1726823033957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/api" />
     <SUITE FILE_PATH="coverage/NumberGenerate$__init____1_.coverage" NAME="__init__ (1) 覆盖结果" MODIFIED="1727337494089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$main.coverage" NAME="main Coverage Results" MODIFIED="1732175046076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$User.coverage" NAME="User 覆盖结果" MODIFIED="1727339330965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
     <SUITE FILE_PATH="coverage/NumberGenerate$IDCard.coverage" NAME="IDCard 覆盖结果" MODIFIED="1728714308273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$Phone.coverage" NAME="Phone 覆盖结果" MODIFIED="1727233214153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$demo.coverage" NAME="demo 覆盖结果" MODIFIED="1728705314395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$csv_db.coverage" NAME="csv_db 覆盖结果" MODIFIED="1726908084503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/db" />
+    <SUITE FILE_PATH="coverage/NumberGenerate$get_phone_api.coverage" NAME="get_phone_api 覆盖结果" MODIFIED="1726823033957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Generate/api" />
   </component>
 </project>

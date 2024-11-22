@@ -6,7 +6,7 @@ if __name__ == '__main__':
     # IDCard.END_YEAR = 2010
     # IDCard.api_function = lambda address: ["320505"]
     date_data = IDCard.get_id_card(
-        id_card="51370119***813008X",
+        id_card="5115**20090516*026",
         # address="广东|揭阳|",
         # gender="男",
         # constellation="狮子座",
@@ -21,12 +21,12 @@ if __name__ == '__main__':
     # print(api.PHONE_ISP_CODES)
     # Phone.api_function = api.cha_hao_baw
     # Phone.api_function = api.tel_phone
-    phones = Phone.get_phone(
-        city_name="南通",
-        incomplete_phone="138********",
-        # isp="联通"
-    )
-    print(len(phones), phones[:20])
+    # phones = Phone.get_phone(
+    #     city_name="南通",
+    #     incomplete_phone="138********",
+    #     # isp="联通"
+    # )
+    # print(len(phones), phones[:20])
 
     # Name = Generate.NameGenerate()
     # names = Name.get_names(['huang', 'zhi', 'chao'])

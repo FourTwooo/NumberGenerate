@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="PY-223.8836.43">
+  <component name="dataSourceStorageLocal">
     <data-source name="area_code" uuid="3189b184-a809-4ad5-bf83-ea4930435dda">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
       <auth-provider>no-auth</auth-provider>
