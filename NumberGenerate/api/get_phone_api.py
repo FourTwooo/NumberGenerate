@@ -1,7 +1,7 @@
 import re
 
 import requests
-from lxml import etree
+# from lxml import etree
 
 PHONE_ISP_CODES = {
     "移动": [
@@ -63,17 +63,20 @@ def tel_phone(incomplete_phone, city_name, isp=None):
     Mobile_phone_number_range_list = []
     for phone_code in phone_codes:
         response = requests.get(f'https://telphone.cn/prefix/{city_name}{phone_code}/', headers=headers)
-        hrefs = etree.HTML(response.text).xpath('//div[@class="list-box"]/ul/li/a/@href')
 
-        for i in hrefs:
-            Mobile_phone_number = is_valid_href(href=i)
-            if Mobile_phone_number:
-                Mobile_phone_number_range_list.append(Mobile_phone_number)
+        for Mobile_phone_number in re.findall(r'(\d{7})号段', response.text):
+            Mobile_phone_number_range_list.append(Mobile_phone_number)
+
+        # hrefs = etree.HTML(response.text).xpath('//div[@class="list-box"]/ul/li/a/@href')
+        # for i in hrefs:
+        #     Mobile_phone_number = is_valid_href(href=i)
+        #     if Mobile_phone_number:
+        #         Mobile_phone_number_range_list.append(Mobile_phone_number)
 
     return Mobile_phone_number_range_list
 
 
 if __name__ == '__main__':
-    # print(tel_phone('138********', '淮安'))
-    print(get_codes_by_carrier_and_segment("联通", "13*"))  # 返回结果：['130', '131', '132']
+    a = tel_phone('138********', '淮安')
+    print(len(a), a)
     # print(get_codes_by_carrier_and_segment("联通", "1*5"))  # 返回结果：['145', '155', '156', '175', '185']
