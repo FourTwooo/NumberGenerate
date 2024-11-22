@@ -19,7 +19,7 @@ pip install NumberGenerate
 ```
 
 
-```cmd
+```python
 import NumberGenerate
 
 IDCard = NumberGenerate.IDCardGenerate()
