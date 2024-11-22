@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='NumberGenerate',
-    version='0.1.1',
+    version='0.1.2',
     description='CN-NumberGenerate',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
