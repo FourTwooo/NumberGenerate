@@ -31,6 +31,7 @@ idcards = IDCard.get_id_card(
     zodiac="龙"
 )
 
+Phone = NumberGenerate.PhoneGenerate()
 phones = Phone.get_phone(
     city_name="三明",
     incomplete_phone="13*****9*2*",

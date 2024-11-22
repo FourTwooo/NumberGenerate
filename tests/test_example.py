@@ -4,6 +4,7 @@ if __name__ == '__main__':
     IDCard.START_YEAR = 2000
     IDCard.END_YEAR = 2010
     IDCard.api_function = lambda address: ["320505"]
+
     date_data = IDCard.get_id_card(
         id_card="******2***********",
         address="广东|揭阳|",
