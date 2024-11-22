@@ -18,7 +18,7 @@ if __name__ == '__main__':
     # Phone.is_db = False
     from Generate import api
 
-    # print(api.PHONE_ISP_CODES)
+    print(api.PHONE_ISP_CODES)
     # Phone.api_function = api.cha_hao_baw
     # Phone.api_function = api.tel_phone
     # phones = Phone.get_phone(
