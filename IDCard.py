@@ -1,8 +1,8 @@
 from datetime import timedelta, datetime
 
 from lunardate import LunarDate
-import NumberGenerate.errors
-from NumberGenerate.db import get_area_codes
+from . import errors
+from .db import get_area_codes
 
 
 class IDCardGenerate:
@@ -124,12 +124,12 @@ class IDCardGenerate:
             if constellation_date is not None:
                 all_dates = filter_dates(all_dates, constellation_date)
             else:
-                raise Generate.errors.NumberValueError(f'{constellation} not in {self.CONSTELLATIONS}')
+                raise errors.NumberValueError(f'{constellation} not in {self.CONSTELLATIONS}')
 
         def filter_zodiac(dates, __zodiac):
             zodiac_list = ["鼠", "牛", "虎", "兔", "龙", "蛇", "马", "羊", "猴", "鸡", "狗", "猪"]
             if __zodiac not in zodiac_list:
-                raise Generate.errors.NumberValueError(f'{__zodiac} not in {zodiac_list}')
+                raise errors.NumberValueError(f'{__zodiac} not in {zodiac_list}')
                 # return dates
             zodiac_offset = zodiac_list.index(__zodiac)
             filtered_dates = [date for date in dates if ((int(date[:4]) - 1900) % 12) == zodiac_offset]
@@ -169,7 +169,7 @@ class IDCardGenerate:
                 success_city_area_codes.append(city_area_code)
 
         if len(success_city_area_codes) == 0:
-            raise Generate.errors.NumberValueError(f'{area_code} != {city_area_codes}')
+            raise errors.NumberValueError(f'{area_code} != {city_area_codes}')
 
         return success_city_area_codes
 
@@ -199,7 +199,7 @@ class IDCardGenerate:
             zodiac = "未知生肖"
 
         if len(id_card) != 18:
-            raise Generate.errors.NumberValueError(f'{id_card} length must be 18 characters')
+            raise errors.NumberValueError(f'{id_card} length must be 18 characters')
 
         area_codes = self.generator_area_code(area_code=id_card[0:6], address=address)
         # print(id_card[6:14])

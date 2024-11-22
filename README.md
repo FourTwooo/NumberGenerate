@@ -14,9 +14,9 @@
 本工具生成的数据均为虚构，仅供测试和学习使用。用户不得将上述内容用于商业或非法用途。使用本工具生成的数据，用户需自行承担相关风险和责任。通过使用本项目代码，用户同意遵守此使用条款，并理解由此带来的任何风险与本人或开发者无关。
 
 ---
-### Generate.IDCardGenerate
+### NumberGenerate.IDCardGenerate
 
-使用的区域代码数据库： [db/area_code.db - city_data](./Generate/db/area_code.db)<!-- @IGNORE PREVIOUS: link -->
+使用的区域代码数据库： [db/area_code.db - city_data](./db/area_code.db)<!-- @IGNORE PREVIOUS: link -->
 
 **类属性**
 
@@ -30,9 +30,9 @@
 **示例代码**
 
 ```python
-import Generate
+import NumberGenerate
 
-IDCard = Generate.IDCardGenerate()
+IDCard = NumberGenerate.IDCardGenerate()
 
 # 自定义查询接口（可选参数）
 # 参数说明:
@@ -48,7 +48,7 @@ IDCard.END_YEAR = 2000
 
 ```
 
-#### Generate.IDCardGenerate().get_id_card
+#### NumberGenerate.IDCardGenerate().get_id_card
 > 身份证号码生成
 
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
@@ -62,9 +62,9 @@ IDCard.END_YEAR = 2000
 
 **示例代码**
 ```python
-import Generate
+import NumberGenerate
 
-IDCard = Generate.IDCardGenerate()
+IDCard = NumberGenerate.IDCardGenerate()
 
 result = IDCard.get_id_card(
     id_card="44****2000******28",
@@ -80,7 +80,7 @@ result = IDCard.get_id_card(
 result = ['445201200007230328', '445201200007231128', '445201200007233828', '445201200007234628', ...]
 ```
 
-#### Generate.IDCardGenerate().generator_date
+#### NumberGenerate.IDCardGenerate().generator_date
 > 年份日期生成
 
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
@@ -92,9 +92,9 @@ result = ['445201200007230328', '445201200007231128', '445201200007233828', '445
 
 **示例代码**
 ```python
-import Generate
+import NumberGenerate
 
-IDCard = Generate.IDCardGenerate()
+IDCard = NumberGenerate.IDCardGenerate()
 
 result = IDCard.generator_date(
     '20******', 
@@ -110,8 +110,8 @@ result = ['20020517', '20140504']
 ```
 
 
-### Generate.PhoneGenerate()
-使用的号段数据库 [db/area_code.db - phone_data](./Generate/db/area_code.db)<!-- @IGNORE PREVIOUS: link -->
+### NumberGenerate.PhoneGenerate()
+使用的号段数据库 [db/area_code.db - phone_data](./db/area_code.db)<!-- @IGNORE PREVIOUS: link -->
 
 号段在线查询使用第三方平台 **[[查号吧](https://www.chahaoba.com), [手机号段网](https://telphone.cn)]**
 
@@ -126,9 +126,9 @@ result = ['20020517', '20140504']
 **示例代码**
 
 ```python
-import Generate
+import NumberGenerate
 
-Phone = Generate.PhoneGenerate()
+Phone = NumberGenerate.PhoneGenerate()
 # 关闭离线(本地数据库)查询
 Phone.is_db = False
 
@@ -140,7 +140,7 @@ Phone.is_db = False
 '''
 Phone.api_function = lambda incomplete_phone, city_name: ["1588854"]
 
-from Generate import api
+from NumberGenerate import api
 
 # 运营商号段更换
 # {"移动": ["134", "135", ...],"联通": ["130", "131", ...], "电信": ["133", "149", ...]}
@@ -151,7 +151,7 @@ Phone.api_function = api.cha_hao_ba
 Phone.api_function = api.tel_phone
 ```
 
-#### Generate.PhoneGenerate().get_phone
+#### NumberGenerate.PhoneGenerate().get_phone
 > 手机号码生成
 
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
@@ -163,9 +163,9 @@ Phone.api_function = api.tel_phone
 **示例代码**
 
 ```python
-import Generate
+import NumberGenerate
 
-Phone = Generate.PhoneGenerate()
+Phone = NumberGenerate.PhoneGenerate()
 
 result = Phone.get_phone(
     city_name="毕节",
@@ -179,7 +179,7 @@ result = Phone.get_phone(
 result = [13017063434, 13035543434, 13048543434, 13048553434, ...]
 ```
 
-#### Generate.PhoneGenerate().generate_phone_area
+#### NumberGenerate.PhoneGenerate().generate_phone_area
 > 手机号段生成
 
 | 属性             | 类型   | 默认值 |是否必填| 说明             |
@@ -191,9 +191,9 @@ result = [13017063434, 13035543434, 13048543434, 13048553434, ...]
 **示例代码**
 
 ```python
-import Generate
+import NumberGenerate
 
-Phone = Generate.PhoneGenerate()
+Phone = NumberGenerate.PhoneGenerate()
 
 result = Phone.generate_phone_area(
     city_name="北京",
@@ -208,7 +208,7 @@ result = ['1621002', '1621003', '1621004', '1621001']
 ```
 
 
-### Generate.NameGenerate()
+### NumberGenerate.NameGenerate()
 生成姓名,支持未知,拼音,缩写,中文多种传参方式
 
 **类属性**
@@ -228,9 +228,9 @@ result = ['1621002', '1621003', '1621004', '1621001']
 
 **示例代码**
 ```python
-import Generate
+import NumberGenerate
 
-Name = Generate.NameGenerate(
+Name = NumberGenerate.NameGenerate(
     rare_word=False,
     common_words=True,
     secondary_common_words=True,
@@ -239,7 +239,7 @@ Name = Generate.NameGenerate(
 ```
 
 
-#### Generate.NameGenerate().add_words
+#### NumberGenerate.NameGenerate().add_words
 > 添加未知汉字
 
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
@@ -249,15 +249,15 @@ Name = Generate.NameGenerate(
 **示例代码**
 
 ```python
-import Generate
+import NumberGenerate
 
-Name = Generate.NameGenerate()
+Name = NumberGenerate.NameGenerate()
 
 Name.add_words(["汉", "字"])
 ```
 
 
-#### Generate.NameGenerate().get_names
+#### NumberGenerate.NameGenerate().get_names
 > 姓名生成
 
 | 属性            | 类型     | 默认值 | 是否必填 | 说明            |
@@ -267,9 +267,9 @@ Name.add_words(["汉", "字"])
 **示例代码**
 
 ```python
-import Generate
+import NumberGenerate
 
-Name = Generate.NameGenerate()
+Name = NumberGenerate.NameGenerate()
 
 result = Name.get_names(['ou', '阳', 'na', '*'])
 ```
@@ -281,7 +281,7 @@ result = ['殴阳捺蘸', '殴阳捺镶', '殴阳捺瓤', '殴阳捺矗', ...]
 
 
 
-### Generate.SaveFile()
+### NumberGenerate.SaveFile()
 数据储存
 
 **类属性**
@@ -293,9 +293,9 @@ result = ['殴阳捺蘸', '殴阳捺镶', '殴阳捺瓤', '殴阳捺矗', ...]
 **示例代码**
 
 ```python
-import Generate
+import NumberGenerate
 
-saveFile = Generate.SaveFile()
+saveFile = NumberGenerate.SaveFile()
 # 更改储存路径
 saveFile.current_dir_path = 'C:/'
 ```
@@ -310,9 +310,9 @@ saveFile.current_dir_path = 'C:/'
 
 **示例代码**
 ```python
-import Generate
+import NumberGenerate
 
-saveFile = Generate.SaveFile()
+saveFile = NumberGenerate.SaveFile()
 
 saveFile.generate_vcf(['13812344321', '13812344322', ...])
 ```
@@ -328,9 +328,9 @@ saveFile.generate_vcf(['13812344321', '13812344322', ...])
 
 **示例代码**
 ```python
-import Generate
+import NumberGenerate
 
-saveFile = Generate.SaveFile()
+saveFile = NumberGenerate.SaveFile()
 
 saveFile.generate_txt(['data1', 'data2'])
 ```

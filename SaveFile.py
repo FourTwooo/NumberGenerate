@@ -1,6 +1,6 @@
 import os
 
-import NumberGenerate.errors
+from . import errors
 
 
 class SaveFile:
@@ -26,7 +26,7 @@ class SaveFile:
         with open(output_file, 'w') as file:
             for phone_number in numbers:
                 if len(str(phone_number)) != 11:
-                    raise Generate.errors.NumberValueError(f'{phone_number} len != 11')
+                    raise errors.NumberValueError(f'{phone_number} len != 11')
                 file.write('BEGIN:VCARD\n')
                 file.write('VERSION:3.0\n')
                 file.write(f'FN:{phone_number}\n')
