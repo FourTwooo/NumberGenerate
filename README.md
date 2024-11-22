@@ -19,7 +19,7 @@ pip install NumberGenerate
 ---
 ### NumberGenerate.IDCardGenerate
 
-使用的区域代码数据库： [db/area_code.db - city_data](./db/area_code.db)<!-- @IGNORE PREVIOUS: link -->
+使用的区域代码数据库： [db/area_code.db - city_data](./NumberGenerate/db/area_code.db)<!-- @IGNORE PREVIOUS: link -->
 
 **类属性**
 
@@ -114,7 +114,7 @@ result = ['20020517', '20140504']
 
 
 ### NumberGenerate.PhoneGenerate()
-使用的号段数据库 [db/area_code.db - phone_data](./db/area_code.db)<!-- @IGNORE PREVIOUS: link -->
+使用的号段数据库 [db/area_code.db - phone_data](./NumberGenerate/db/area_code.db)<!-- @IGNORE PREVIOUS: link -->
 
 号段在线查询使用第三方平台 **[[查号吧](https://www.chahaoba.com), [手机号段网](https://telphone.cn)]**
 
