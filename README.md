@@ -22,7 +22,7 @@
 
 | 属性           | 类型     | 默认值  | 说明            |
 |:--------------|:-------  |:----|:--------------|
-| db_function   | Function | from Generate.db import get_area_codes   | 本地数据库查询函数        |
+| db_function   | Function | from NumberGenerate.db import get_area_codes   | 本地数据库查询函数        |
 | START_YEAR    | Int   | 1900   | 生成起始年份|
 | END_YEAR      | Int   | datetime.now().year + 1   | 生成终止年份 |
 | CONSTELLATIONS| String   | ...   | 星座表     |
@@ -119,8 +119,8 @@ result = ['20020517', '20140504']
 
 | 属性           | 类型     | 默认值  | 说明            |
 |:--------------|:-------  |:----|:--------------|
-| api_function   | Function | from Generate import api   | 在线API查询|
-| db_function    | Function   | from Generate import db   | 本地数据库查询函数|
+| api_function   | Function | from NumberGenerate import api   | 在线API查询|
+| db_function    | Function   | from NumberGenerate import db   | 本地数据库查询函数|
 | is_db      | Bool   | True  | 是否开启数据库查询,默认开启.关闭才会使用在线查询|
 
 **示例代码**
