@@ -1,8 +1,11 @@
+# 免责声明
+
+本工具生成的数据均为虚构，仅供测试和学习使用。用户不得将上述内容用于商业或非法用途。使用本工具生成的数据，用户需自行承担相关风险和责任。通过使用本项目代码，用户同意遵守此使用条款，并理解由此带来的任何风险与本人或开发者无关。
+
+---
 # NumberGenerate
 虚拟信息生成器，提供身份证号码、电话号码、姓名等数据的生成和保存功能。支持多种自定义参数设置，以适应不同的使用场景。
-```cmd
-pip install NumberGenerate
-```
+
 ## 开发环境
 - python 3.8.0
 
@@ -10,11 +13,30 @@ pip install NumberGenerate
 
 - 第三方库详见 [requirements.txt](./requirements.txt)<!-- @IGNORE PREVIOUS: link -->
 
+## 快速食用
+```cmd
+pip install NumberGenerate
+```
 
----
-# 免责声明
 
-本工具生成的数据均为虚构，仅供测试和学习使用。用户不得将上述内容用于商业或非法用途。使用本工具生成的数据，用户需自行承担相关风险和责任。通过使用本项目代码，用户同意遵守此使用条款，并理解由此带来的任何风险与本人或开发者无关。
+```cmd
+import NumberGenerate
+
+IDCard = NumberGenerate.IDCardGenerate()
+idcards = IDCard.get_id_card(
+    id_card="******2***********",
+    address="广东|揭阳|",
+    gender="男",
+    constellation="狮子座",
+    zodiac="龙"
+)
+
+phones = Phone.get_phone(
+    city_name="三明",
+    incomplete_phone="13*****9*2*",
+    isp="联通"
+)
+```
 
 ---
 ### NumberGenerate.IDCardGenerate
