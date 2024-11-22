@@ -1,8 +1,8 @@
 from datetime import timedelta, datetime
 
 from lunardate import LunarDate
-import Generate.errors
-from Generate.db import get_area_codes
+import NumberGenerate.errors
+from NumberGenerate.db import get_area_codes
 
 
 class IDCardGenerate:

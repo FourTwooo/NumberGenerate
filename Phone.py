@@ -1,14 +1,14 @@
 from concurrent.futures import ThreadPoolExecutor
 
-import Generate.errors
-from Generate import api, db
+import NumberGenerate.errors
+from NumberGenerate import api, db
 
 
 class PhoneGenerate:
 
     def __init__(self):
-        self.api_function = Generate.api.get_phone_api.tel_phone
-        self.db_function = Generate.db.get_phone_codes
+        self.api_function = NumberGenerate.api.get_phone_api.tel_phone
+        self.db_function = NumberGenerate.db.get_phone_codes
         # 是否开启数据库查询
         self.is_db = True
 
@@ -45,7 +45,7 @@ class PhoneGenerate:
                 phoneRangeList = self.api_function(incomplete_phone, city_name, isp)
             else:
                 prefixes = []
-                for value in Generate.api.PHONE_ISP_CODES.values():
+                for value in NumberGenerate.api.PHONE_ISP_CODES.values():
                     prefixes += value
                 phoneRangeList = [prefix + str(i).zfill(4) for prefix in prefixes for i in range(10000)]
                 # phoneRangeList = [str(_) for _ in range(1300000, 1999999+1)]
@@ -81,7 +81,7 @@ class PhoneGenerate:
             return self.generate_complete_phones(arg[0], arg[1])
 
         if not phoneRange:
-            raise Generate.errors.NumberValueError(f"{city_name} {incomplete_phone} 未查询到符合号段")
+            raise NumberGenerate.errors.NumberValueError(f"{city_name} {incomplete_phone} 未查询到符合号段")
         tasks = [(p, incomplete_phone) for p in phoneRange]
         # print(len(tasks), tasks)
         max_workers = 100 if len(phoneRange) >= 100 else len(phoneRange)

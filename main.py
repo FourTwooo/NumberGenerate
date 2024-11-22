@@ -1,5 +1,4 @@
 import Generate
-
 if __name__ == '__main__':
     IDCard = Generate.IDCardGenerate()
     # IDCard.START_YEAR = 2000
